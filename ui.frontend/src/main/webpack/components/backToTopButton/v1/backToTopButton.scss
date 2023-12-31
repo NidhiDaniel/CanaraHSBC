@@ -1,0 +1,43 @@
+$primaryColor: #00ADEE;
+
+.back_to_top{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 55px;
+    height: 55px;
+    line-height: 52px;
+    text-align: center;
+    background: $primaryColor;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgb(0 0 0 / 25%);
+    z-index: 999;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+
+    img{
+        width: 25px;
+    }
+
+    &.show{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media only screen and (max-width: 767px){
+        width: 45px;
+        height: 45px;
+        right: 10px;
+        bottom: 90px;
+        line-height: 45px;
+
+        img{
+            width: 20px;
+        }
+    }
+}

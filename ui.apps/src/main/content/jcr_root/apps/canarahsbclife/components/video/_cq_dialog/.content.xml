@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <pathLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        fieldDescription="Path of the video."
+                        fieldLabel="Path for Video"
+                        name="./pathLink"
+                        required="{Boolean}true"/>
+                    <pathImage
+                        jcr:primaryType="nt:unstructured"
+                       sling:resourceType="cq/gui/components/authoring/dialog/fileupload" required="{Boolean}true"
+						class="cq-droptarget" fileNameParameter="./fileName"
+						fileReferenceParameter="./fileReference" fieldLabel="Logo Image"
+						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        name="./pathImage"/>
+                    <checkbox
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        text="Pop-up Playback"
+                        name="./checkBox"
+                        uncheckedValue="false"
+                        value="true"/>
+
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

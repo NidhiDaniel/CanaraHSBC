@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+ xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+ xmlns:cq="http://www.day.com/jcr/cq/1.0"
+ xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Footer Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+	extraClientlibs="[canarahsbclife.dialog.mainheader]">
+
+    <content
+        granite:class="tabtest"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        <items
+            jcr:primaryType="nt:unstructured"
+            sling:hideChildren="[*]">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Top Header"
+				granite:class="footercardlist-seperation"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+							<phoneicon
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+								 fieldLabel="Phone Icon" fieldDescription="Upload icon"
+								 name="./phoneIcon" rootPath="/content/dam/canarahsbclife"
+								 required="{Boolean}true"/>
+							<phonelabel
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								 fieldLabel="Phone Label" fieldDescription="Enter Label"
+								 name="./phoneLabel" required="{Boolean}true"/>
+							<phonelabelLink
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/foundation/form/textfield"
+								 fieldLabel="Phone Label Link" fieldDescription="Enter Page or URL"
+								 name="./phoneLink"
+								 required="{Boolean}true"/>
+
+							<emailicon
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+								 fieldLabel="Email Icon" fieldDescription="Upload icon"
+								 name="./emailIcon" rootPath="/content/dam/canarahsbclife"
+								 required="{Boolean}true"/>
+							<emailaddress
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								 fieldLabel="Email Label" fieldDescription="Enter Label"
+								 name="./emailLabel" required="{Boolean}true" validation="email-validation" />
+							<locationicon
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+								 fieldLabel="Location Icon" fieldDescription="Upload icon"
+								 name="./locationIcon" rootPath="/content/dam/canarahsbclife"
+								 required="{Boolean}true"/>
+							<locationlabel
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+								 fieldLabel="Location Label" fieldDescription="Enter Label" maxlength="20"
+								 name="./locationLabel" required="{Boolean}true" validation="" />
+							<locationLink
+								 jcr:primaryType="nt:unstructured"
+								 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+								 fieldLabel="Location Label Link" fieldDescription="Enter Page or URL"
+								 name="./locationLink" rootPath="/content/dam/canarahsbclife"
+								 required="{Boolean}true"/>
+
+
+
+                        </items>
+                    </column>
+                </items>
+            </tab1>
+
+        </items>
+    </content>
+</jcr:root>

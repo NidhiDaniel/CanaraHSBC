@@ -1,0 +1,46 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.initialNumItems}" />
+
+<section class="frequently-asked-sec" data-sly-use.model="com.chl.core.models.AccordionModel"
+    data-sly-test="${model.initialNumItems}">
+    <div class="container" data-sly-test="${model.initialNumItems}">
+        <input type="hidden" id="Accordion_que" name="Accordion_que" value="${model.accordionQueAns}">
+        <input type="hidden" id="Accordion_showless" name="showless" value="${model.showLessButton}">
+        <input type="hidden" id="Accordion_showmore" name="showmore" value="${model.showMoreButton}">
+        <div class="heading-title" data-sly-test="${model.title}">
+            <h2>${model.title}</h2>
+            <div class="heading-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <input type="hidden" id="Accordion_initialNumItems" name="Accordion_initialNumItems"
+            value="${model.initialNumItems}">
+            <input type="hidden" id="Accordion_displayShowMore" name="Accordion_displayShowMore"
+            value="${model.displayShowMore}">
+            <input type="hidden" id="Accordion_hideInactiveItem" name="Accordion_hideInactiveItem"
+            value="${model.hideInactiveItem}">
+            <div class="accordion-item" data-sly-repeat.queAndAns="${model.accordionQueAns}">
+                <h2 class="accordion-header" id="headingFirst">
+                    <button class="accordion-button collapsed" type="button" aria-expanded="false"
+                        aria-controls="collapseFive">
+                        ${queAndAns.question @context='html'}
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        ${queAndAns.answer @context='html'}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showbtn showFAQBtn" id="showbtn" data-sly-test="${model.showMoreButton}">
+            <input type="hidden" id="Accordion_itemPerLoad" name="Accordion_itemPerLoad" value="${model.itemPerLoad}">
+            <input type="hidden" id="Accordion_shownitems" name="shownitems" value="${model.initialNumItems}">
+            <a href="javascript:;" class="blue_btn" id="showFAQBtn">${model.showMoreButton}</a>
+        </div>
+    </div>
+</section>

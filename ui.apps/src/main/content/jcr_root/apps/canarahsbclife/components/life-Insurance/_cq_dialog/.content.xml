@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Life Insurance Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog" >
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <Title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        fieldDescription="Enter the Title"
+                        emptyText="Enter Title"
+                        name="./title"
+                        required="{Boolean}true"
+                        maxlength="100"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldDescription="A description to display as the subheadline for the video."
+                        fieldLabel="Description"
+                        name="./description"
+                        useFixedInlineToolbar="{Boolean}true"   required="{Boolean}true"/>
+
+                    <pathLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        fieldDescription="Path of the video."
+                        fieldLabel="Path for Video"
+                        name="./pathLink"
+                        required="{Boolean}true"/>
+                    <pathImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+						class="cq-droptarget" fileNameParameter="./fileName"
+						fileReferenceParameter="./fileReference" fieldLabel="Logo Image"
+						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        name="./pathImage"/>
+                    <checkbox
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                        text="Pop-up Playback"
+                        name="./checkbox"
+                        value="true"/>
+                    <ButtonName
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        maxlength="50"
+                        fieldLabel="Button Name"
+                        fieldDescription="Enter the Button Name"
+                        emptyText="Enter Button Name"
+                        name="./buttonName_insurance"/>
+                    <ButtonLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        fieldDescription="Path for Button Link"
+                        fieldLabel="Path for Button Link"
+                        name="./buttonLink_insurance"/>
+                      <targetType jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/select"
+						fieldLabel="CTA Button Target Type" name="./targetType_insurance">
+						<items jcr:primaryType="nt:unstructured">
+							<h1 jcr:primaryType="nt:unstructured" text="Same Window" value="_self" />
+							<h2 jcr:primaryType="nt:unstructured" text="New Tab" value="_blank" />
+							<h3 jcr:primaryType="nt:unstructured" text="New Window" value="newWindow" />
+						</items>
+					</targetType>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
+

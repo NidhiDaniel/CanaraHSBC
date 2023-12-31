@@ -1,0 +1,11 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<div class="variation-title mb-5" data-sly-use.model="com.chl.core.models.VariationTitleModel" data-sly-test="${model.title}">
+            <h2 data-sly-test="${model.title}">${model.title}</h2>
+            <div class="variation-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p data-sly-test="${model.subTitle}">${model.subTitle@context='html'}</p>
+        </div>

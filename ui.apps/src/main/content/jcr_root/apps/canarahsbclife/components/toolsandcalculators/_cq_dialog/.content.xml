@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured" jcr:title="Tools And Calculators Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[canara-hsbc.validation,canara-hsbc.site]">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column jcr:primaryType="nt:unstructured"
+                 granite:class="calculator-seperation"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Heading" name="./heading" granite:class="txt-validation"
+                        validation="txt-validation" required="{Boolean}true">
+                        <granite:data jcr:primaryType="nt:unstructured" max-length="100" />
+                    </title>
+                    <multi granite:class="calc-validation"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true" fieldLabel="Card Multifield"
+                        validation="calc-validation">
+                        <granite:data jcr:primaryType="nt:unstructured"
+                            max-item="6" min-item="3"/>
+                        <field jcr:primaryType="nt:unstructured"
+                       
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./multifield">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <file jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            class="cq-droptarget" fieldLabel="Icon Image"
+                                            fileNameParameter="./fileName"
+                                            fileReferenceParameter="./fileReferenceIcon"
+                                            name="./iconImage" required="{Boolean}true" rootPath="/content/dam/canarahsbclife"/>
+                                        <altText jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Alt text" name="./altText"
+                                            required="{Boolean}true" />
+                                    </items>
+                                </column>
+                                <cardtitle jcr:primaryType="nt:unstructured"
+                                    granite:class="txt-validation"
+                                    validation="txt-validation"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Card Title" name="./cardTitle"
+                                    required="{Boolean}true">
+                                    <granite:data jcr:primaryType="nt:unstructured" max-length="40" />
+                                </cardtitle>
+
+                                <cardbutton jcr:primaryType="nt:unstructured"
+                                    granite:class="txt-validation"
+                                    validation="txt-validation"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="CTA Button Text" name="./btnText"
+                                    required="{Boolean}true">
+                                    <granite:data jcr:primaryType="nt:unstructured" max-length="10" />
+                                </cardbutton>
+                                <cardbuttonlink jcr:primaryType="nt:unstructured"
+                                    granite:class="txt-validation"
+                                    validation="txt-validation"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldLabel="CTA Button Links" name="./btnLink"
+                                    required="{Boolean}true">
+                                    <granite:data jcr:primaryType="nt:unstructured" max-length="40" />
+                                </cardbuttonlink>
+                               
+                            </items>
+                        </field>
+                    </multi>
+                    <cardtarget jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                    emptyText="Same Window"
+                    fieldLabel="CTA Button Target Type" name="./btnTarget">
+                    <items jcr:primaryType="nt:unstructured">
+                        <samewindow jcr:primaryType="nt:unstructured" value="_self"
+                            text="Same Window" />
+                        <newtab jcr:primaryType="nt:unstructured" value="_blank"
+                            text="New Tab" />
+                        <newwindow jcr:primaryType="nt:unstructured"
+                            value="newWindow" text="New Window" />
+                    </items>
+                </cardtarget>
+
+                </items>
+
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,51 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.text}" />
+
+<section class="categories_sec" data-sly-use.model="com.chl.core.models.MiniCard" data-sly-test="${model.text}">
+    <div class="container">
+        <input type="hidden" id="close" name="close" value="${model.miniButton}">
+        <input type="hidden" id="moreplans" name="moreplans" value="${model.miniButtonText}">
+       
+        <div class="heading-title">
+            <h2 data-sly-test="${model.text}">${model.text}</h2>
+            <div class="heading-title-lines" data-sly-test="${model.text}">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="categories_plan_div">
+            <ul data-sly-list.item="${model.miniCard}">
+                <li>
+                    <div class="categories_box" data-sly-test="${model.miniTargetType != 'newWindow'}">
+
+                        <a data-sly-test="${item.cardUrlTargetType}" href="${item.cardUrlTargetType}" target="${model.miniTargetType}" class="minicard_image">
+                            <p data-sly-test="${item.status}">${item.status}</p>
+                            <div class="imgsec">
+                                <img data-sly-test="${item.iconImage}" src="${item.iconImage}"
+                                    data-sly-test="${item.altText}" alt="${item.altText}" />
+                            </div>
+                            <h4 data-sly-test="${item.title}">${item.title}</h4>
+                        </a>
+                    </div>
+                    <div class="categories_box" data-sly-test="${model.miniTargetType == 'newWindow'}">
+                     <a data-sly-test="${item.cardUrlTargetType}" href="${item.cardUrlTargetType}" onclick="window.open(this.href, '_blank', 'width=1000,height=800');
+                     return false;"  class="minicard_image">
+
+
+                            <p data-sly-test="${item.status}">${item.status}</p>
+                            <div class="imgsec">
+                                <img data-sly-test="${item.iconImage}" src="${item.iconImage}"
+                                    data-sly-test="${item.altText}" alt="${item.altText}" />
+                            </div>
+                            <h4 data-sly-test="${item.title}">${item.title}</h4>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+</section>

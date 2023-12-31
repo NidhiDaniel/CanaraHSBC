@@ -1,0 +1,107 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.pathLink}" />
+
+<section
+  class="product_info"
+  data-sly-use.model="com.chl.core.models.VideoModel"
+  data-sly-test="${model.pathLink}"
+>
+  <div class="container">
+    <div class="video_player">
+      <div class="laptop_container" data-sly-test="${!model.checkBox}">
+        <div class="laptop_img_top">
+          <div
+            class="video_laptop playInsideLaptop"
+            style="
+              background: url('/content/dam/canarahsbclife/in/en/video-player/placeholder.jpg')
+                no-repeat center top;
+              background-size: contain;
+            "
+          >
+            <img
+              src="${model.fileReference}"
+              alt=""
+              loading="lazy"
+              data-sly-test="${model.pathLink}"
+              data-video="${model.pathLink}"
+            />
+            <span> </span>
+          </div>
+          <img
+            src="/content/dam/canarahsbclife/in/en/video-player/laptop-01.png"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <div class="laptop_img_base">
+          <img
+            src="/content/dam/canarahsbclife/in/en/video-player/laptop-02.png"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div
+        class="laptop_container laptop_popup"
+        data-sly-test="${model.checkBox}"
+      >
+        <div class="laptop_img_top">
+          <div
+            class="video_laptop playVideoPopup"
+            data-bs-toggle="modal"
+            data-bs-target="#insuranceModal"
+            data-sly-test="${model.pathLink}"
+            data-value="${model.pathLink}"
+          >
+            <span>
+              <img
+                src="/content/dam/canarahsbclife/in/en/video-player/play.png"
+                alt=""
+              />
+            </span>
+            <img src="${model.fileReference}" alt="" loading="lazy" />
+          </div>
+          <img
+            src="/content/dam/canarahsbclife/in/en/video-player/laptop-01.png"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <div class="laptop_img_base">
+          <img
+            src="/content/dam/canarahsbclife/in/en/video-player/laptop-02.png"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <!-- The Modal Starts -->
+      <div class="modal fade insuranceModal" id="insuranceModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">iSelect Smart 360 Term Plan</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  class="popupIframe"
+                  src=""
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- The Modal Ends -->
+    </div>
+  </div>
+</section>

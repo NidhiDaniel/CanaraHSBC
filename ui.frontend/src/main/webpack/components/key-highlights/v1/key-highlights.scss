@@ -1,0 +1,88 @@
+$condensedFont: 'Roboto Condensed', sans-serif;
+$primaryColor: #00ADEE;
+
+.key_highlights_section{
+    padding: 5% 0;
+
+    h2{
+        margin-bottom: 10px;
+    }
+
+    .need_consultation{
+        background: $primaryColor;
+        height: 100%;
+        padding: 25px;
+
+        h4{
+            color: #fff;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .d-flex{
+            img{
+                width: 36px;
+                margin-right: 15px;
+            }
+
+            p{
+                font-family: $condensedFont;
+                font-size: 22px;
+                font-weight: 700;
+                color: #fff;
+                line-height: normal;
+
+                span{
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 961px){
+
+    .key_highlights_section{
+        .list{
+            margin-top: 30px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .key_highlights_section{
+        padding: 10% 0;
+    
+        .need_consultation{
+            background: $primaryColor;
+            height: 100%;
+            padding: 15px;
+    
+            h4{
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+    
+            .d-flex{
+                img{
+                    width: 32px;
+                    margin-right: 10px;
+                    height: fit-content;
+                }
+    
+                p{
+                    font-size: 18px;
+    
+                    span{
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}

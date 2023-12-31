@@ -1,0 +1,75 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.customers_sec{
+	padding: 50px 0px;
+
+	.heading-title{
+		margin-bottom: 30px;
+	}
+
+	.swiper-slide{
+		height: auto;
+	}
+
+	.customers_box{
+		position: relative;
+		background: $colorWhite;
+		border: 1px solid #E2E2E2;
+		border-radius: 36px;
+		padding: 100px 28px 30px;
+		box-sizing: border-box;
+		height: 100%;
+
+		h3{
+			font-size: 24px;
+			color: #606060;
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+
+		p{
+			font-size: 15px;
+			font-weight: 400;
+			color: $colorGrey;
+			margin-bottom: 20px;
+		}
+	}
+	.customers_box:before{
+		content: '';
+		position: absolute;
+		left: 20px;
+		top: 30px;
+		width: 56px;
+		height: 56px;
+		background: url("/content/dam/canarahsbclife/in/en/customers/customer_icon1.svg")no-repeat;
+	}
+
+	.swiper-pagination{
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.swiper-pagination span {
+		width: 8px;
+		height: 8px;
+		background: #F5F5F5;
+		display: block;
+		border-radius: 40px;
+		display: inline-block;
+		margin: 0 5px;
+		border: 1px solid $primaryColor;
+		transition: all 0.3s ease;
+	}
+
+	.swiper-pagination span.swiper-pagination-bullet-active {
+		width: 25px;
+		background: #00ADEE;
+	}
+
+}

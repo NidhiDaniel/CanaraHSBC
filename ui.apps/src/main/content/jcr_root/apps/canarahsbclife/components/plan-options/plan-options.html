@@ -1,0 +1,68 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.heading}" />
+
+<sly data-sly-use.model="com.chl.core.models.PlanOptionsModel" data-sly-test="${model.heading}">
+    <section class="plan_option_section insurance_sec ">
+        <div class="container">
+            <div class="heading-title mb-5">
+                <h2>${model.heading}</h2>
+                <div class="heading-title-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>${model.subheading}</p>
+            </div>
+           
+            <div class="insurance_boxsec">
+                <div class="swiper" id="insuranceSlider">
+                    <div class="swiper-wrapper" data-sly-list.plan="${model.planOptionList}">
+                        <div class="swiper-slide">
+                            <div class="insurance_box">
+                                <div class="insurance_slider_content">
+                                    <div class="plan_option_img">
+                                        <img src="${plan.fileReference}" alt="${plan.altText}">
+                                    </div>
+                                    <div class="heading-title text-start mt-4 mb-0">
+                                        <h2>${plan.title}</h2>
+                                        <div class="heading-title-lines">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    ${plan.description @context = 'html'}
+                                </div>
+                                <div class="insurance_slider_btn">
+                                    <a class="premium_btn plan${planlist.index}">${plan.cta}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <div class="swiper_insurance_next"></div>
+                <div class="swiper_insurance_prev"></div>
+                
+            </div>
+
+        </div>
+
+    </section>
+
+    <section data-sly-repeat.plan="${model.planOptionList}" id="plan${planlist.index}" class="why-buy">
+        <div class="container">
+            <div class="title_why_buy">
+                <h2>${plan.efheading}</h2>
+            </div>
+<div class="why-buy-content">
+    <div  data-sly-resource="${@path=plan.eflink,
+        selectors='content', wcmmode='disabled'}"></div>
+
+
+     </div>
+        </div>
+
+</section>
+    </sly>

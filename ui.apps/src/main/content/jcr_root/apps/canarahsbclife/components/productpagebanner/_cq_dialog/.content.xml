@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Product Page Banner Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+	extraClientlibs="[canarahsbclife.dialog.productpagebanner]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <fileReferenceLogo jcr:primaryType="nt:unstructured"
+						sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+						class="cq-droptarget" fileNameParameter="./fileName"
+						fileReferenceParameter="./fileReferenceLogo" fieldLabel="Logo" required="true"
+						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+						name="./file" rootPath="/content/dam/canarahsbclife"/>
+					<logoAltText jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="Logo Image-AltText" name="./logoAltText" required="true" maxlength="100"/>
+                    <fileReferenceDesktop jcr:primaryType="nt:unstructured"
+						sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+						class="cq-droptarget" fileNameParameter="./fileName" required="true"
+						fileReferenceParameter="./fileReferenceDesktop" fieldLabel="Desktop Image"
+						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+						name="./file" rootPath="/content/dam/canarahsbclife"/>
+                    <altText jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="Desktop Image-AltText" name="./altText" required="true" maxlength="100"/>
+                    <fileReferenceMobile jcr:primaryType="nt:unstructured"
+						sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+						class="cq-droptarget" fileNameParameter="./fileName"
+						fileReferenceParameter="./fileReferenceMobile" fieldLabel="Mobile Image"
+						fieldDescription="Upload 'optional' image for mobile"
+						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+						name="./file" rootPath="/content/dam/canarahsbclife"/>
+                    <mobileAltText jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="Mobile Image-AltText" name="./mobileAltText" maxlength="100" />
+                    <text granite:class="txt-validation"
+						jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="Title" name="./text" required="true" maxlength="{Long}100" 
+						validation="txt-validation">
+					<granite:data
+                        jcr:primaryType="nt:unstructured"
+                        max-length="100"/>
+					</text>
+                    <description jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+						class="rich-custom"
+						maxlength="100"
+                        name="./description"  fieldLabel="Description"
+                        useFixedInlineToolbar="{Boolean}true" />
+                    <button jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="CTA Button-1" name="./button" maxlength="40" />
+					<productBannerLink jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+						fieldLabel="CTA Button-1 Link" name="./productBannerLink" />
+                    <productBannerTargetType jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/select"
+						fieldLabel="CTA Button-1 Target Type" name="./productBannerTargetType">
+						<items jcr:primaryType="nt:unstructured">
+							<h1 jcr:primaryType="nt:unstructured" text="Same Window" value="_self" />
+							<h2 jcr:primaryType="nt:unstructured" text="New Tab" value="_blank" />
+							<h3 jcr:primaryType="nt:unstructured" text="New Window" value="newWindow" />
+						</items>
+					</productBannerTargetType>
+                    <ctaButton jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="CTA Button-2" name="./ctaButton" maxlength="40" />
+					<pageBannerLink jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+						fieldLabel="CTA Button-2 Link" name="./pageBannerLink" />
+                    <pageBannerTargetType jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/select"
+						fieldLabel="CTA Button-2 Target Type" name="./pageBannerTargetType">
+						<items jcr:primaryType="nt:unstructured">
+							<h1 jcr:primaryType="nt:unstructured" text="Same Window" value="_self" />
+							<h2 jcr:primaryType="nt:unstructured" text="New Tab" value="_blank" />
+							<h3 jcr:primaryType="nt:unstructured" text="New Window" value="new_window" />
+						</items>
+					</pageBannerTargetType>
+                    <titleCheckbox jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/form/checkbox"
+						fieldDescription="Hide/Show in mobile view"
+						text="Display Title in mobile view" name="./titleCheckbox" value="true" />
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

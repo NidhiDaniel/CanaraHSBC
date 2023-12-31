@@ -1,0 +1,63 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.text}" />
+<section data-sly-use.model="com.chl.core.models.RatingComponentModel" class="feedback_sec pb-0" data-sly-test="${model.text}">
+    <div class="container">
+    <div class="feedback_left">
+        <div class="heading-title">
+            <h2 data-sly-test="${model.text}">${model.text}</h2>
+            <div class="heading-title-lines" data-sly-test="${model.text}">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="default_rating position-relative">
+            <h5 data-sly-test="${model.ratingText}">${model.ratingText}</h5>
+            <img data-sly-test="${model.fileReference}" src="${model.fileReference}" data-sly-test="${model.altText}" alt="${model.altText}">
+        </div>
+        <div>
+            <div data-sly-test="${model.title}">${model.title @ context = 'html'}</div>
+            <h3 data-sly-test="${model.textField}">${model.textField }</h3>
+        </div>
+
+        <div class="functional_star" data-sly-test="${model.ratingMessage}">
+            <fieldset class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label class = "full labelRating" for="star5" title="Excellent - 5 stars"></label>
+                
+                <input type="radio" id="star4half" name="rating" value="5" />
+                <label class="half labelRating" for="star4half" title="Excellent - 4.5 stars"></label>
+                
+                <input type="radio" id="star4" name="rating" value="4" checked />
+                <label class = "full labelRating" for="star4" title="Very Good - 4 stars"></label>
+                
+                <input type="radio" id="star3half" name="rating" value="4" />
+                <label class="half labelRating" for="star3half" title="Very Good - 3.5 stars"></label>
+                
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label class = "full labelRating" for="star3" title="Satisfactory - 3 stars"></label>
+                
+                <input type="radio" id="star2half" name="rating" value="3" />
+                <label class="half labelRating" for="star2half" title="Satisfactory - 2.5 stars"></label>
+                
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label class = "full labelRating" for="star2" title="Average - 2 stars"></label>
+                
+                <input type="radio" id="star1half" name="rating" value="2" />
+                <label class="half labelRating" for="star1half" title="Average - 1.5 stars"></label>
+                
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label class = "full labelRating" for="star1" title="Poor - 1 star"></label>
+                
+                <input type="radio" id="starhalf" name="rating" value="1" />
+                <label class="half labelRating" for="starhalf" title="Poor - 0.5 stars"></label>
+            </fieldset>
+            <span class="rating_text" id="ratingText">Very Good</span>
+        </div>
+        <a href="${model.buttonLink}" class="blue_btn" data-sly-test="${model.buttonLink}">${model.buttonName @ context = 'html'}</a>
+        <!--<div class="rating_thank_you" id="ratingThankYou" display="none";>
+            <h5 data-sly-test="${model.ratingMessage}">${model.ratingMessage}</h5>
+        </div>-->
+    </div>
+</div>
+</section>

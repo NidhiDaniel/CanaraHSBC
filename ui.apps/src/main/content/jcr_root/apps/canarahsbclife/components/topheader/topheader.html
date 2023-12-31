@@ -1,0 +1,13 @@
+<header>
+    <div class="top_header" data-sly-use.model="com.chl.core.models.HeaderModel" data-sly-test="${model.phoneLabel}">
+        <div class="container">
+            <div class="call_mail text-end">
+                <a href="tel:${model.phoneLink}"><img data-sly-test="${model.phoneIcon}" src="${model.phoneIcon}" alt="">${model.phoneLabel}</a>
+                <span>|</span>
+                <a href="mailto:${model.emailLabel}"><img data-sly-test="${model.emailIcon}" src="${model.emailIcon}" alt="Email">${model.emailLabel}</a>
+                <span>|</span>
+                <a href="https://maps.google.com/?q=${model.locationLink}" target="_blank"><img data-sly-test="${model.locationIcon}" src="${model.locationIcon}"  alt="Locate us">${model.locationLabel}</a>
+            </div>
+        </div>
+    </div>
+</header>

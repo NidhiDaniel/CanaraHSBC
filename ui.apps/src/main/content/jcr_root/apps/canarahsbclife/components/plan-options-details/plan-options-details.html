@@ -1,0 +1,43 @@
+
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.heading}" />
+
+<sly data-sly-use.model="com.chl.core.models.PlanOptionsDetailsModel" data-sly-test="${model.heading}">
+
+
+
+    <div class="row mb-3 plan-options-details">
+        <div class="col-lg-12">
+            <div class="life-secure-box">
+                <div class="heading-title">
+                    <h2>${model.heading}</h2>
+                    <div class="heading-title-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="key_list">
+                    <ul data-sly-list.plan="${model.planOptionDetailsList}">
+                        <li>
+                            <div class="key_icon">
+                                <span>
+                                    <img src="${plan.fileReference}" alt="${plan.alttext}">
+                                </span>
+                            </div>
+                            <div class="key_list_content">
+                                <p>${plan.description @context = 'html'}</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</sly>

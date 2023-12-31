@@ -1,0 +1,78 @@
+$primaryColor: #00ADEE;
+$secondaryColor: #FFC10E;
+
+.breadcrumb-section {
+    width: 100%;
+
+    .breadcrumb-url {
+        width: 100%;
+        background: #F5F5F5;
+        padding: 10px 0;
+
+        @media only screen and (max-width: 767px){
+            background: #fff;
+        }
+
+        .breadcrumb-list{  
+            li{
+                display: inline-block;
+                font-size: 15px;
+
+                a{
+                    .home-icon{
+                        width: 18px;
+                        transform: translateY(-2px);
+                        opacity: 0.4;
+                    }
+                    
+                }
+
+                &.current{
+                    font-weight: 700;
+                    color: $primaryColor;
+                    .breadcrumb-hyperlink:hover{
+                        color: #00adee;
+                    }
+                }
+                
+            }
+            
+        }
+    }
+
+    .line {
+        width: 100%;
+        height: auto;
+
+        .blue-line {
+            position: absolute;
+            width:  34.33%  ;
+            height: 4px;
+            background: $primaryColor;
+        }
+
+        .yellow-line {
+            position: absolute;
+            width:  33.33%  ;
+            height: 4px;
+            left: 34%; 
+            background: #FFBE0E;
+
+        }
+
+        .red-line {
+            position: absolute;
+            width: 33.33%;
+            height: 4px;
+            left: 67%;
+            background: #E2453B;
+
+        }
+    }
+}
+.canara-breadcrumb{
+    .breadcrumb{
+    --bs-breadcrumb-margin-bottom: 0;}
+    }
+ 
+ 

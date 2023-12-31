@@ -1,0 +1,7 @@
+// Configuration created by Apache Sling JCR Installer
+{
+    "resource.resolver.mapping":[
+      "/-/",
+      "/content/canarahsbclife/in/:/in/"
+    ]
+  }

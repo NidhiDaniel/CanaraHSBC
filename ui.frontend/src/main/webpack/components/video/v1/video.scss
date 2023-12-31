@@ -1,0 +1,123 @@
+@use "sass:math";
+
+.video_player {
+  position: relative;
+  padding: 5% 0;
+
+  .laptop_container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+
+    @media screen and (max-width: 991px) {
+      margin-top: 20px;
+    }
+
+    .laptop_img_top {
+      position: relative;
+
+      .video_laptop {
+        position: absolute;
+        top: math.div(25px, 500px) * 100%;
+        right: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 12px 12px 10px 10px;
+        width: math.div(710px, 900px) * 100%;
+        padding-bottom: 51.25%;
+        height: 0;
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          border-radius: 10px 10px 5px 5px;
+        }
+
+        span {
+          position: absolute;
+          background: url("/content/dam/canarahsbclife/in/en/video-player/play.png")
+            no-repeat center center;
+          width: 60px;
+          height: 50px;
+          top: 40%;
+          left: 0;
+          right: 0;
+          margin: auto;
+          background-size: contain;
+          z-index: 2;
+
+          @media screen and (max-width: 767px) {
+            width: 40px;
+          }
+        }
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+          outline: 0;
+          border-radius: 10px 10px 5px 5px;
+        }
+      }
+    }
+  }
+}
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog div {
+  width: 560px;
+  position: relative;
+  margin: 10% auto;
+  border-radius: 10px;
+}
+
+.close {
+  background: #606061;
+  color: #ffffff;
+  line-height: 25px;
+  position: absolute;
+  right: -138px;
+  text-align: center;
+  top: -29px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: #00d9ff;
+}
+
+.video_screen {
+  width: 700;
+  height: 450;
+}

@@ -1,0 +1,77 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.altText}" />
+<section data-sly-use.model="com.chl.core.models.ImageComponentModel"data-sly-test="${model.altText}" >
+   <div class="our_philosophy_top" data-sly-test="${model.bannerCheck!='true'}">
+      <div class="row">
+         <div class="our_philosophy_tr mt-lg-4 mt-4 mt-sm-4" data-sly-test="${model.imageTargetType != 'newWindow'}">
+            <a
+               data-sly-test="${model.imageLink}"
+               href="${model.imageLink}"
+               target="${model.imageTargetType}"
+               >
+            <img
+               class="our_philosophy_test"
+               data-sly-test="${model.fileReference}"
+               src="${model.fileReference}"
+               data-src="${model.fileReference}"
+               data-sly-test="${model.altText}"
+               alt="${model.altText}"
+               />
+            </a>
+         </div>
+         <div class="our_philosophy_tr mt-lg-4 mt-4 mt-sm-4" data-sly-test="${model.imageTargetType=='newWindow'}">
+            <a
+               data-sly-test="${model.imageLink}"
+               href="${model.imageLink}"
+               onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+               >
+            <img
+               class="our_philosophy_test"
+               data-sly-test="${model.fileReference}"
+               src="${model.fileReference}"
+               data-src="${model.fileReference}"
+               data-sly-test="${model.altText}"
+               alt="${model.altText}"
+               />
+            </a>
+         </div>
+      </div>
+   </div>
+   <div
+      class="our_philosophy_bottom our_philosophy_sec"
+      data-sly-test="${model.bannerCheck=='true'}"
+      >
+      <div class="our_philosophy_bl" data-sly-test="${model.imageTargetType != 'newWindow'}">
+         <a
+            data-sly-test="${model.imageLink}"
+            href="${model.imageLink}"
+            target="${model.imageTargetType}"
+            >
+         <img
+            class="our_philosophy_test"
+            data-sly-test="${model.fileReference}"
+            src="${model.fileReference}"
+            data-src="${model.fileReference}"
+            data-sly-test="${model.altText}"
+            alt="${model.altText}"
+            />
+         </a>
+      </div>
+      <div class="our_philosophy_bl" data-sly-test="${model.imageTargetType=='newWindow'}">
+         <a
+            data-sly-test="${model.imageLink}"
+            href="${model.imageLink}"
+            onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+            >
+         <img
+            class="our_philosophy_test"
+            data-sly-test="${model.fileReference}"
+            src="${model.fileReference}"
+            data-src="${model.fileReference}"
+            data-sly-test="${model.altText}"
+            alt="${model.altText}"
+            />
+         </a>
+      </div>
+   </div>
+</section>

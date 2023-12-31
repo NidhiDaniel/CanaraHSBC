@@ -1,0 +1,27 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<section class="customers_sec" data-sly-test="${properties.title}" data-sly-use.testimonycardmodel="com.chl.core.models.TestimonyCardModel">
+    <div class="container">
+        <div class="heading-title">
+            <h2>${testimonycardmodel.title}</h2>
+            <div class="heading-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="swiper" id="customerSlider">
+            <div class="swiper-wrapper" data-sly-list.cardList="${testimonycardmodel.testimonyCardList}">
+                <div class="swiper-slide">
+                    <div class="customers_box">
+                        <h3>${cardList.cardTitle}</h3>
+                        <p>${cardList.testimonyCardDescription}</p>
+                        <img src="/content/dam/canarahsbclife/in/en/customers/customer_star.svg" alt="" title="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

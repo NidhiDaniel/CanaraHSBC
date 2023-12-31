@@ -1,0 +1,48 @@
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.heading}" />
+<section class="calculators_sec" data-sly-use.model="com.chl.core.models.ToolsAndCalculatorModel" data-sly-test="${model.heading}">
+    
+
+    <div class="container" >
+        <div class="heading-title">
+            <h2>${model.heading}</h2>
+            <div class="heading-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="position-relative">
+            <div class="swiper" id="calculatorSlider">
+                <div class="swiper-wrapper">
+
+                    <sly data-sly-list.item="${model.cardList}">
+
+                        <div class="swiper-slide">
+                            <div class="calculators_box">
+                                <div class="imgsec">
+                                    <img src="${item.iconImage}" alt="${item.altText}" title="${item.cardTitle}">
+                                </div>
+                                <h3>${item.cardTitle}</h3>
+
+                                <sly data-sly-test="${model.btnTarget != 'newWindow'}">
+                                    <a href="${item.btnLink}" target="${model.btnTarget}"
+                                        class="blue_btn">${item.btnText}</a>
+                                    </sly>
+                                    <sly data-sly-test="${model.btnTarget == 'newWindow'}">
+                                        <a href="${item.btnLink}" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                            class="blue_btn">${item.btnText}</a>
+                                    </sly>
+                            </div>
+                        </div>
+                    </sly>
+
+                </div>
+            </div>
+            <div class="swiper_calc_next"></div>
+            <div class="swiper_calc_prev"></div>
+        </div>
+    </div>
+
+</section>

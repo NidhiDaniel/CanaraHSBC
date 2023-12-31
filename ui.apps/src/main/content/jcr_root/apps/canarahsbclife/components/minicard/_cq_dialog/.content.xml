@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+xmlns:cq="http://www.day.com/jcr/cq/1.0"
+xmlns:jcr="http://www.jcp.org/jcr/1.0"
+xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Mini Card Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+     extraClientlibs="[canarahsbclife.dialog.minicard]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./text"
+                        required="true" validation="minicard-text-40char"/>
+                    <miniTargetType jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        required="{Boolean}true"
+                        emptyText="Same Window"
+                        fieldLabel="Card URL Target Type" name="./miniTargetType">
+                        <items jcr:primaryType="nt:unstructured">
+                        <samewindow jcr:primaryType="nt:unstructured" value="_self" text="Same Window" />
+                        <newtab jcr:primaryType="nt:unstructured" value="_blank" text="New Tab" />
+                        <newwindow jcr:primaryType="nt:unstructured" value="newWindow" text="New Window"/>
+                    </items>
+                     </miniTargetType>
+                    <multi
+                        jcr:primaryType="nt:unstructured"
+                        granite:class="minicardlist-seperation"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Card Multifield">
+                    <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./multifield">
+                            <items jcr:primaryType="nt:unstructured">
+                    <status
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Status"
+                        name="./status"
+                        />
+                    <iconImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        class="cq-droptarget"
+                        fieldLabel="IconImage"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        name="./iconImage" required="{Boolean}true" rootPath="/content/dam/canarahsbclife"/>
+                    <altText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel=" Alt Text"
+                        name="./altText"
+                        required="true"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title"
+                        required="true" validation="minicard-title-100char"/>
+                    <cardUrlTarget
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Card URL Target "
+                        name="./cardUrlTargetType"
+                        required="true"
+                        rootPath="/content"/>
+                    </items>
+                    </field>
+                    </multi>
+                    <miniButtonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Expand List Button Text"
+                        name="./miniButtonText"
+                        required="true" validation="minicard-miniButtonText-40char"/>
+                    <miniButton
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Collapse List Button Text"
+                        name="./miniButton"
+                        required="true" validation="minicard-miniButtonText-40char"/>
+
+                </items>
+            </column>
+        </items>
+        </content>
+</jcr:root>

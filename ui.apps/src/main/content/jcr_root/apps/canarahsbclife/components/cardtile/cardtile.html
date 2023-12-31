@@ -1,0 +1,40 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<section class="insurance_sec"  data-sly-use.model="com.chl.core.models.CardTileModel" data-sly-test="${model.title}">
+    <div class="container">
+        <div class="heading-title">
+            <h2 data-sly-test="${model.title}">${model.title}</h2>
+            <div class="heading-title-lines" data-sly-test="${model.title}">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p data-sly-test="${model.subTitle}">${model.subTitle @context='html'}</p>
+        </div>
+        <div class="insurance_boxsec">
+            <div class="swiper" id="insuranceSlider" >
+                <div class="swiper-wrapper" data-sly-list.item="${model.cardTile}">
+                    <div class="swiper-slide">
+                        <div class="insurance_box">
+                            <div class="insurance_slider_content">
+                                <img data-sly-test="${item.fileReference}" src="${item.fileReference}" data-sly-test="${item.cardtilealtText}" alt="${item.cardtilealtText}" title="Saving Plan">
+                                <h3 data-sly-test="${item.cardTitle}">${item.cardTitle}</h3>
+                                <div>
+                                    <p data-sly-test="${item.text}">${item.text @context='html'}</p>
+                                </div>
+                            </div>
+                            <div class="insurance_slider_btn" data-sly-test="${model.CardtilebuttonTarget != 'newWindow'}">
+                                <a data-sly-test="${item.cardtilebuttonText}" href="${item.cardtilebuttonLink}" target="${model.getCardtilebuttonTarget}" class="premium_btn">${item.cardtilebuttonText}</a>
+                            </div>
+                            <div class="insurance_slider_btn" data-sly-test="${model.CardtilebuttonTarget== 'newWindow'}">
+                                <a data-sly-test="${item.cardtilebuttonText}" href="${item.cardtilebuttonLink}" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;" class="premium_btn">${item.cardtilebuttonText}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper_insurance_next"></div>
+            <div class="swiper_insurance_prev"></div>
+        </div>
+    </div>
+</section>

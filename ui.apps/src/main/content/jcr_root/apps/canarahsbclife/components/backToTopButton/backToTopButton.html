@@ -1,0 +1,12 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.altText}" />
+
+<!-- Back To Top Starts -->
+<a href="javascript:;" class="back_to_top" data-sly-use.model="com.chl.core.models.BackToTopModel">
+    <img data-sly-test="${model.pathIcon}" src="${model.pathIcon}" alt="${model.altText}">
+</a>
+<!-- Back To Top Ends -->
+
+
+

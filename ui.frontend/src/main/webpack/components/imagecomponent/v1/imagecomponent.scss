@@ -1,0 +1,48 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.our_philosophy_top .our_philosophy_tr {
+	margin: 0;
+}
+
+.our_philosophy_top a {
+	display: block;
+}
+
+.our_philosophy_top .our_philosophy_test {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	vertical-align: centre;
+	border-style: none;
+}
+
+.our_philosophy_bottom .our_philosophy_bl {
+	margin-top: 25px;
+
+}
+
+.our_philosophy_bottom a {
+	display: block;
+}
+
+.our_philosophy_bottom .our_philosophy_test {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	vertical-align: centre;
+	border-style: none;
+}
+
+.our_philosophy_sec {
+	padding: 0 0 0 20px;
+
+	@media only screen and (max-width: 991px) {
+		padding: 0;
+	}
+}

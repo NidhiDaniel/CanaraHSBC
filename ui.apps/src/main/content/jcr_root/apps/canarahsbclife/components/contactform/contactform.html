@@ -1,0 +1,132 @@
+<!-- Specialist section start -->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.css @ categories=['canarahsbclife.contactform']}" />
+<section class="form_section" data-sly-test="${properties.title}"
+    data-sly-use.contactformmodel="com.chl.core.models.ContactFormModel">
+    <div class="container">
+        <div class="heading-title">
+            <h2>${contactformmodel.title}</h2>
+            <div class="heading-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <form data-sly-use.componentidmodel="${'com.chl.core.models.ComponentIdModel'}" id="${componentidmodel.uniqueId}" method="GET">
+            <div class="form_container">
+                <div class="quote_form">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="input_container position-relative">
+                                <img class="icons_form"
+                                    src="/content/dam/canarahsbclife/in/en/form/user.svg" alt="">
+                                <input type="text" placeholder="Name *" id="nameField" name="nameField" required>
+                                <span class="cf_error_msg" id="error-name">Invalid Name</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="input_container position-relative">
+                                <img class="icons_form"
+                                    src="/content/dam/canarahsbclife/in/en/form/mail.svg" alt="">
+                                <input type="text" placeholder="Email Address *" id="emailField" name="emailField" required>
+                                <span class="cf_error_msg" id="error-email">Invalid Email ID</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="input_container position-relative">
+                                <img class="icons_form"
+                                    src="/content/dam/canarahsbclife/in/en/form/phone.svg" alt="">
+                                <input type="number" placeholder="Mobile Number *" maxlength="10" id="mobNumField" name="mobNumField" required>
+                                <span class="cf_error_msg" id="error-mob">Enter 10 digit mobile number</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote_form">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="input_container position-relative calendar">
+                                <a href="javascript:;" id="btnDOB" class="date_icon_btn">
+                                    <img class="icons_form"
+                                        src="/content/dam/canarahsbclife/in/en/form/calendar.svg" alt="">
+                                </a>
+                                <input id="txtAge" class="date_picker datepicker-here" type="text" placeholder="DOB *"
+                                    name="datepicker" data-language='en' required>
+                                <span class="error_msg"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="annual_income_box">
+                                <div class="annual_title">
+                                    <p>Annual Income (In Lacs)</p>
+                                </div>
+                                <div class="annual_radio_btn" id="annual">
+                                    <div class="form_check">
+                                        <input class="form_check_input" type="radio" id="radio-3_${componentidmodel.uniqueId}" value="0-3 lacs"
+                                            name="Annual_Income">
+                                        <label class="form_check_label" for="radio-3_${componentidmodel.uniqueId}">
+                                            < 3</label>
+                                    </div>
+                                    <div class="form_check">
+                                        <input class="form_check_input" type="radio" id="radio-3-5_${componentidmodel.uniqueId}" value="3-5 lacs"
+                                            name="Annual_Income">
+                                        <label class="form_check_label" for="radio-3-5_${componentidmodel.uniqueId}">3-5</label>
+                                    </div>
+                                    <div class="form_check">
+                                        <input class="form_check_input" type="radio" id="radio-5-7_${componentidmodel.uniqueId}" value="5-7 lacs"
+                                            name="Annual_Income">
+                                        <label class="form_check_label" for="radio-5-7_${componentidmodel.uniqueId}">5-7</label>
+                                    </div>
+                                    <div class="form_check">
+                                        <input class="form_check_input" type="radio" id="radio-7-10_${componentidmodel.uniqueId}" value="7-10 lacs"
+                                            name="Annual_Income">
+                                        <label class="form_check_label" for="radio-7-10_${componentidmodel.uniqueId}">07-10</label>
+                                    </div>
+                                    <div class="form_check">
+                                        <input class="form_check_input" type="radio" id="radio-10-15_${componentidmodel.uniqueId}" value="10-15 lacs"
+                                            name="Annual_Income">
+                                        <label class="form_check_label" for="radio-10-15_${componentidmodel.uniqueId}">10-15</label>
+                                    </div>
+                                    <div class="form_check">
+                                        <input class="form_check_input" type="radio" id="radio->15_${componentidmodel.uniqueId}"
+                                            value="More than 15 lacs" name="Annual_Income">
+                                        <label class="form_check_label" for="radio->15_${componentidmodel.uniqueId}">> 15</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="quote_form">
+                    <div class="row" data-sly-list.fieldList="${contactformmodel.formFieldList}">
+                        <div class="col-lg-4">
+                            <div class="input_container position-relative">
+                                <img class="icons_form" src="${fieldList.file}" alt="">
+                                <input type="${fieldList.fieldType=='text'?'text':'number'}" id="${fieldList.fieldName}" name="${fieldList.fieldName}"
+                                    placeholder="${fieldList.fieldName}" data-sly-attribute.required="${fieldList.checkMandatory=='true'}">
+                                <span class="error_msg"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote_form">
+                    <div class="checkbox_group">
+                        <input type="radio" name="Accept" value="acceptCheckbox" id="acceptCheckbox" checked>
+                        <label for="acceptCheckbox" class="termsAndConditions">${contactformmodel.termsAndConditions @context='html'}</label>
+                        <span class="error_msg"></span>
+                    </div>
+                </div>
+                <div class="mt-lg-5 text-center">
+                    <input type="hidden" id="cf_link_${componentidmodel.uniqueId}" value="${contactformmodel.ctaLink @ extension = 'html'}">
+                    <button type="submit" class="blue_btn" id="cf_submitBtn_${componentidmodel.uniqueId}"
+                        value="${properties.targetType}">${contactformmodel.cta}</button>
+                </div>
+        </form>
+    </div>
+    </div>
+</section>
+<!-- Specialist section end -->

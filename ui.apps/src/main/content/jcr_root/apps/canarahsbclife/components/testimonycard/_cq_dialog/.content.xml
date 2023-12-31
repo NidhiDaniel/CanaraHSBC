@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Testimony Card Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog" extraClientlibs="canarahsbclife.dialog.testimonycard">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title" emptyText="Enter title" required="{Boolean}true" validation="testimonycard-title-150char"
+                        name="./title" />
+
+                    <testimonycardaccordion
+                        jcr:primaryType="nt:unstructured"
+                        granite:class="testimonyCardSeperation"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield" required="{Boolean}true"
+                        validation="testimonycard-multifield" composite="{Boolean}true" fieldLabel="Testimony Card Details">
+
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            min-item="4" />
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./testimonyCardMultiField">
+
+                            <items
+                                jcr:primaryType="nt:unstructured">
+
+                                <cardtitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" required="{Boolean}true"
+                                    validation="testimonycard-title-150char" fieldLabel="Title" emptyText="Enter title"
+                                    name="./cardTitle" />
+
+                                <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea" required="{Boolean}true"
+                                    validation="testimonycard-description-300char" fieldLabel="Description" emptyText="Enter description"
+                                    name="./testimonyCardDescription" />
+                            </items>
+                        </field>
+                    </testimonycardaccordion>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

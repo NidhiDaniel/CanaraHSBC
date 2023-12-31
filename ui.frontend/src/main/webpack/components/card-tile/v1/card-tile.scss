@@ -1,0 +1,256 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.insurance_sec {
+    padding: 50px 0px 80px;
+    position: relative;
+    background: url("/content/dam/canarahsbclife/in/en/insurance-plans/insurance-plans-bt-img.png") no-repeat;
+    background-position: center bottom;
+    z-index: 0;
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec {
+      padding-bottom: 40px;
+      background: url("/content/dam/canarahsbclife/in/en/insurance-plans/m-insurance-plans-bt-img.png") no-repeat;
+      background-position: center bottom;
+      z-index: 0;
+    }
+  }
+  .insurance_sec::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    height: 339px;
+    background: #F5F5F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 65px 65px;
+    z-index: -1;
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec::before {
+      min-height: 393px;
+    }
+  }
+  .insurance_sec .heading-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .insurance_sec .heading-title h2 {
+    color: #606060;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  .insurance_sec .heading-title .heading-title-lines {
+    display: flex;
+    width: 100px;
+    margin: auto;
+  }
+  .insurance_sec .heading-title .heading-title-lines span {
+    display: block;
+    width: 33.333333px;
+    height: 3px;
+  }
+  .insurance_sec .heading-title .heading-title-lines span:nth-child(1) {
+    background: #00ADEE;
+  }
+  .insurance_sec .heading-title .heading-title-lines span:nth-child(2) {
+    background: #FFC10E;
+  }
+  .insurance_sec .heading-title .heading-title-lines span:nth-child(3) {
+    background: #ed2027;
+  }
+  .insurance_sec .heading-title p {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+  .insurance_sec .heading-title p a {
+    color: #00ADEE;
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec .swiper {
+      padding: 0 20px;
+    }
+  }
+  .insurance_sec .insurance_boxsec {
+    position: relative;
+  }
+  .insurance_sec .insurance_boxsec .swiper-slide {
+    height: auto;
+  }
+  .insurance_sec .insurance_boxsec .insurance_box {
+    background: #fff;
+    border: 2px solid #EAEAEA;
+    border-radius: 20px;
+    text-align: center;
+    min-height: 550px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+  @media only screen and (max-width: 1024px) {
+    .insurance_sec .insurance_boxsec .insurance_box {
+      min-height: 500px;
+    }
+  }
+  .insurance_sec .insurance_boxsec .insurance_box img {
+    padding: 20px;
+    width: 250px;
+  }
+  .insurance_sec .insurance_boxsec .insurance_box h3 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    background: #00ADEE;
+    padding: 15px;
+  }
+  @media only screen and (max-width: 1024px) {
+    .insurance_sec .insurance_boxsec .insurance_box h3 {
+      font-size: 20px;
+    }
+  }
+  .insurance_sec .insurance_boxsec .insurance_box ul {
+    padding: 25px 16px 70px;
+    text-align: left;
+    margin-top: -5px;
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec .insurance_boxsec .insurance_box ul {
+      padding: 25px 30px 70px;
+    }
+  }
+  .insurance_sec .insurance_boxsec .insurance_box ul li {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 18px;
+    position: relative;
+    padding-left: 30px;
+  }
+  @media only screen and (max-width: 1024px) {
+    .insurance_sec .insurance_boxsec .insurance_box ul li {
+      margin-top: 10px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec .insurance_boxsec .insurance_box ul li {
+      font-size: 16px;
+    }
+  }
+   .insurance_sec .insurance_boxsec .insurance_box ul li:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 10%;
+    width: 20px;
+    height: 20px;
+    background: url("/content/dam/canarahsbclife/in/en/insurance-plans/insurance_icon.svg") no-repeat left;
+  }
+  .insurance_sec .insurance_boxsec .insurance_box .insurance_slider_btn {
+    margin-bottom: 30px;
+  }
+  .insurance_sec .insurance_boxsec .insurance_box .insurance_slider_btn .premium_btn {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 35px;
+    border-radius: 30px;
+    color: #00ADEE;
+    //font-weight: 500;
+    background: #fff;
+    border: 1px solid #00ADEE;
+  }
+  .insurance_sec .insurance_boxsec .insurance_box .insurance_slider_btn .premium_btn:hover {
+    color: $colorWhite;
+    background: $primaryColor;
+    border: 1px solid $primaryColor;
+  }
+  .insurance_sec .swiper_insurance_next,
+  .insurance_sec .swiper_insurance_prev {
+    width: 50px;
+    height: 50px;
+    background: #F5F5F5;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  .insurance_sec .swiper_insurance_next::after,
+  .insurance_sec .swiper_insurance_prev::after {
+    content: "";
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.5490196078);
+    border-right: 2px solid rgba(0, 0, 0, 0.5490196078);
+    margin: auto;
+    transition: all 0.3s ease;
+  }
+  .insurance_sec .swiper_insurance_next:hover,
+  .insurance_sec .swiper_insurance_prev:hover {
+    background: #00ADEE;
+  }
+  .insurance_sec .swiper_insurance_next:hover::after,
+  .insurance_sec .swiper_insurance_prev:hover::after {
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec .swiper_insurance_next,
+  .insurance_sec .swiper_insurance_prev {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .insurance_sec .swiper_insurance_next {
+    right: -70px;
+  }
+  @media only screen and (max-width: 1024px) {
+    .insurance_sec .swiper_insurance_next {
+      right: -30px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec .swiper_insurance_next {
+      right: 0;
+    }
+  }
+  .insurance_sec .swiper_insurance_next::after {
+    transform: rotate(45deg);
+  }
+  .insurance_sec .swiper_insurance_prev {
+    left: -70px;
+  }
+  @media only screen and (max-width: 1024px) {
+    .insurance_sec .swiper_insurance_prev {
+      left: -30px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .insurance_sec .swiper_insurance_prev {
+      left: 0;
+    }
+  }
+  .insurance_sec .swiper_insurance_prev::after {
+    transform: rotate(225deg);
+  }/*# sourceMappingURL=insurance-plans.css.map */

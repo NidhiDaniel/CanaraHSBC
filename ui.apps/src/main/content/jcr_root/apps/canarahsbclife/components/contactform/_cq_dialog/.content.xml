@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Contact Form Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog" extraClientlibs="canarahsbclife.contactform">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        emptyText="Enter title"
+                        required="{Boolean}true"
+                        name="./title" />
+                    <formfieldaccordion
+                        jcr:primaryType="nt:unstructured"
+                        granite:class="contactFormSeperation"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Additional fields">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./formMultiField">
+                            <items jcr:primaryType="nt:unstructured">
+                                <fieldname
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    required="{Boolean}true"
+                                    fieldLabel="Field Name"
+                                    emptyText="Enter field name"
+                                    name="./fieldName" />
+                                <checkmandatory
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    text="Mandatory Field"
+                                    name="./checkMandatory"
+                                    value="true" />
+                                <fieldtype
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Field Type" name="./fieldType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <item1 jcr:primaryType="nt:unstructured" text="Text" value="text" selected="{Boolean}true" />
+                                        <item2 jcr:primaryType="nt:unstructured" text="Number" value="number" />
+                                    </items>
+                                </fieldtype>
+                                <file
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                    rootPath="/content/dam/canarahsbclife"
+                                    fieldLabel="Icon"
+                                    name="./file"/>
+                            </items>
+                        </field>
+                    </formfieldaccordion>
+                    <cta
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="CTA"
+                        emptyText="Enter Button Name"
+                        required="{Boolean}true"
+                        name="./cta" />
+                    <ctalink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                        fieldLabel="CTA Link"
+                        emptyText="Upload Link"
+                        required="{Boolean}true"
+                        name="./ctaLink" />
+                    <targettype
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="CTA URL Target Type"
+                        name="./targetType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <item1 jcr:primaryType="nt:unstructured" text="Same Window" value="_self" selected="{Boolean}true" />
+                            <item2 jcr:primaryType="nt:unstructured" text="New Tab" value="_blank" />
+                            <item3 jcr:primaryType="nt:unstructured" text="New Window" value="newWindow" />
+                        </items>
+                    </targettype>
+                    <termsandconditions
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Terms and conditions"
+                        fieldDescription="Enter terms and conditions text"
+                        useFixedInlineToolbar="{Boolean}true"
+                        required="{Boolean}true"
+                        name="./termsAndConditions"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

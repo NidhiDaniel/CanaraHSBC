@@ -1,0 +1,21 @@
+<section class="breadcrumb-section" >
+    <div class="breadcrumb-url">
+        <div class="container">
+            
+            <ul class="breadcrumb-list" data-sly-use.breadcrumb="com.adobe.cq.wcm.core.components.models.Breadcrumb" >
+                <li data-sly-use.custombreadcrumb="com.chl.core.models.BreadcrumbModel">
+                    <a href="${custombreadcrumb.homepageLink}" target="_blank"><img
+                            src="${custombreadcrumb.fileReference}" alt="${custombreadcrumb.homepageText}"
+                            class="home-icon"></a>
+                </li>
+                <sly data-sly-list.navItem="${breadcrumb.items}">
+                <li>/</li>
+
+                <li class="current"> <a href="${navItem.URL}" class="breadcrumb-hyperlink" data-sly-unwrap="${navItem.active}">${navItem.title}</a>
+                </li>
+              </sly>
+
+            </ul>
+        </div>
+    </div>
+</section>

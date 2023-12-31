@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title=" Card Tile Properties"
+
+    sling:resourceType="cq/gui/components/authoring/dialog" extraClientlibs="[canarahsbclife.dialog.cardtile]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="./title" required="{Boolean}true" validation="cardtile-title-100char"/>
+                    <subTitle
+                        jcr:primaryType="nt:unstructured"
+						sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+						fieldLabel="Sub Title" name="./subTitle" useFixedInlineToolbar="{Boolean}true"/>
+                    <buttontarget jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="Same Window"
+                        fieldLabel="CTA-Button Target" name="./cardtilebuttonTarget">
+                            <items jcr:primaryType="nt:unstructured">
+                            <samewindow jcr:primaryType="nt:unstructured" value="_self" text="Same Window" name="./sameWindow" />
+                            <newtab jcr:primaryType="nt:unstructured" value="_blank" text="New Tab" name="./newTab" />
+                            <newwindow jcr:primaryType="nt:unstructured" value="newWindow" text="New Window" name="./newWindow" />
+                            </items>
+                    </buttontarget>
+                    <multi jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        granite:class="cardlist-seperation"
+						composite="{Boolean}true" fieldLabel="Card Tile" validation="cardtile-multifield">
+                        <granite:data jcr:primaryType="nt:unstructured"
+			                min-item="3"/>
+						<field jcr:primaryType="nt:unstructured"
+							sling:resourceType="granite/ui/components/coral/foundation/container"
+							name="./cardTile">
+							<items jcr:primaryType="nt:unstructured">
+                                <image jcr:primaryType="nt:unstructured"
+									sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+									class="cq-droptarget" fileNameParameter="./fileName"
+									fileReferenceParameter="./fileReference" fieldLabel="Logo Image"
+									mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+									name="./logoImage" />
+                                <altText jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Logo Image Alt Text"
+                                name="./cardtilealtText"
+                                required="true"/>
+                                <cardTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Card Title"
+                                    name="./cardTitle" required="{Boolean}true" validation="cardtile-title-100char"/>
+								<richText jcr:primaryType="nt:unstructured"
+									sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+									fieldLabel="Description" name="./text" useFixedInlineToolbar="{Boolean}true" validation="cardtile-text-350char"/>
+                                <buttontext jcr:primaryType="nt:unstructured"
+						            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						            fieldLabel="Button Text" name="./cardtilebuttonText" validation="cardtile-buttonText-25char"/>
+					            <buttonlink jcr:primaryType="nt:unstructured"
+						            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+						            fieldLabel="Button Link" name="./cardtilebuttonLink" />
+							</items>
+						</field>
+					</multi>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

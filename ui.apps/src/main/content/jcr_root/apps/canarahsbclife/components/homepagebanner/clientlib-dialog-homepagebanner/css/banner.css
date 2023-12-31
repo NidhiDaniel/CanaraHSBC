@@ -1,0 +1,90 @@
+.banner-seperation .coral3-Multifield .coral3-Multifield-item {
+  border-style: groove;
+  background-color: white;
+}
+.span-style {
+  margin-bottom: -30px;
+  margin-top: -25px;
+}
+.pay-style {
+  font-weight: 400;
+  color: #606060;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-size: 26px;
+}
+.pay-blue-style {
+  font-size: 30px;
+  font-weight: 600;
+  color: #00adee;
+  line-height: 0.5;
+  margin-bottom: -10px;
+  margin-top: 10px;
+  display: block !important;
+}
+@media only screen and (max-width: 991px) {
+  .pay-blue-style {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pay-blue-style {
+    font-size: 30px;
+    margin-bottom: -15px;
+  }
+}
+ .blue-style {
+  font-size: 32px;
+  font-weight: 600;
+  color: #00adee;
+  line-height: 0.5;
+}
+@media only screen and (max-width: 991px) {
+   .blue-style {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+   .blue-style {
+    font-size: 30px;
+  }
+}
+.pay-h4-style {
+  font-size: 18px;
+  font-weight: 700;
+  color: #606060;
+  margin-top: 0px;
+}
+@media only screen and (max-width: 991px) {
+  .pay-h4-style {
+    margin-top: -5px;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .pay-h4-style {
+    margin-top: -20px;
+  }
+}
+.h2-style {
+  color: #606060;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 0px;
+  margin-bottom: -5px;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 767px) {
+  .h2-style {
+    display: block;
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .h2-style {
+    font-size: 1pc;
+    line-height: 0px;
+    margin-bottom: 10px;
+  }
+}

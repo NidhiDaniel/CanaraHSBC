@@ -1,0 +1,881 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.phoneIcon}" />
+<sly data-sly-test="${properties.phoneIcon}">
+  <header>
+    <div class="top_header" data-sly-use.model="com.chl.core.models.HeaderModel" data-sly-test="${model.phoneLabel}">
+      <div class="container">
+        <div class="call_mail text-end">
+          <a href="tel:${model.phoneLink}"><img data-sly-test="${model.phoneIcon}" src="${model.phoneIcon}" alt="">${model.phoneLabel}</a>
+          <span>|</span>
+          <a href="mailto:${model.emailLabel}"><img data-sly-test="${model.emailIcon}" src="${model.emailIcon}" alt="Email">${model.emailLabel}</a>
+          <span>|</span>
+          <a href="https://maps.google.com/?q=${model.locationLink}" target="_blank"><img data-sly-test="${model.locationIcon}" src="${model.locationIcon}" alt="Locate us">${model.locationLabel}</a>
+        </div>
+      </div>
+    </div>
+    <div class="main_header" id="myHeader" data-sly-use.model="com.chl.core.models.MainHeaderModel" data-sly-test="${model.logo}">
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="hamburger">
+            <span></span>
+          </div>
+          <div class="logo">
+            <a href="${model.logoUrl}"><img data-sly-test="${model.logo}" src="${model.logo}" data-sly-test="${model.logoAltText}" alt="${model.logoAltText}" loading="lazy"></a>
+          </div>
+          <div class="navigation">
+            <nav>
+              <ul data-sly-use.headerNavSection="com.chl.core.models.HeaderNavSecModel">
+                <li>
+                  <a href="${headerNavSection.section1Url}" data-sly-test="${headerNavSection.section1Title}">
+                    ${headerNavSection.section1Title}</a>
+                  <span class="m_nav"></span>
+                  <div class="dropdown_nav">
+                    <div class="headerTabsLifeInsurance">
+                      <div class="row gx-0">
+                        <div class="col-lg-3 col-md-3 col-12">
+                          <div class="tab_header_links">
+                            <ul data-sly-list.sub="${headerNavSection.subNavSecOneMulti}">
+                              <li class="${subList.first ? 'active' : ''}">
+                                <a href="${sub.subHeadingUrl}" data-sly-test="${sub.subHeading}">${sub.subHeading}</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-9 col-12 equal_padding">
+                          <div class="tabContent" data-sly-list.sub2="${headerNavSection.subNavSecOneMulti}">
+                            <div class="${sub2List.first ? 'tabItem active' : 'tabItem'}">
+                              <div class="m_header_links">
+                                <a href="${sub2.subHeadingUrl}" data-sly-test="${sub2.subHeading}">${sub2.subHeading}</a>
+                                <span></span>
+                              </div>
+                              <div class="tabItem_Accordion">
+                                <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${sub2.subHeading}</a>
+                                <sly data-sly-test="${sub2.itemCategory=='card'}">
+                                  <div class="row" data-sly-list.dropMenu="${sub2.cardList}">
+                                    <div class="${sub2.cardList.size  == 4 ? 'col-lg-3' : 'col-lg-4'}  col-md-6 col-12">
+                                      <div class="sub_nav">
+                                        <div class="sub_nav_normal">
+                                          <p data-sly-test="${dropMenu.cardTitle}">
+                                            ${dropMenu.cardTitle}
+                                            <span
+                                              data-sly-test="${dropMenu.statusText}"
+                                              class="ms-0 mt-1">${dropMenu.statusText}
+                                            </span>
+                                          </p>
+                                          <h6 data-sly-test="${dropMenu.bulletList}">
+                                            ${dropMenu.bulletList
+                                            @context='html'}</h6>
+                                        </div>
+                                        <div class="header_btns">
+                                          <a href="${dropMenu.ctaLink1}" target="_blank" class="header_premium_btn margin_right">${dropMenu.ctaButton1}</a>
+                                          <a class="btn_outline" href="${dropMenu.ctaLink2}">
+                                            ${dropMenu.ctaButton2}</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceBannerImage}" class="header_banner">
+                                    <a href="${sub2.cardImageLink}" target="_blank"><img src="${sub2.fileReferenceBannerImage}" /></a>
+                                  </div>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='list'}">
+                                  <sly data-sly-test="${sub2.customListCount5}">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList1 @context='html'}
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList2 @context='html'}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center last_sub_nav">
+                                      <a class="color_orange" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                    </div>
+                                    <div data-sly-test="${sub2.fileReferenceImage1}" class="header_banner" >
+                                      <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                    </div>
+                                  </sly>
+                                  <sly data-sly-test="${!sub2.customListCount5}">
+                                    <sly data-sly-test="${sub2.customList}">
+                                      <div class="row">
+                                        <div class="${sub2.fileReferenceImage1 ? 'col-lg-4 col-md-6 col-12' : ''}">
+                                          <div class="sub_nav sub_nav_list">
+                                            ${sub2.customList @context='html'}
+                                            <p class="last_sub_nav">
+                                              <a class="color_orange view_all_btn" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-6 col-12">
+                                          <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                        </div>
+                                      </div>
+                                    </sly>
+                                  </sly>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='imageCard'}">
+                                  <div class="header_team">
+                                    <div class="row" data-sly-list.imageCardList="${sub2.imagecardList}">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="row align-items-center">
+                                          <div class="col-6">
+                                            <img src="${imageCardList.fileReferenceImage2}" alt="${sub2.image2AltText}">
+                                          </div>
+                                          <div class="col-6 imageCardList">
+                                            <p class="mb-0" data-sly-test="${imageCardList.description}">
+                                              ${imageCardList.description
+                                              @context='html'}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center view_all_btn_sec6">
+                                      <p last_sub_nav>
+                                      <a class="color_orange" href="${sub2.linkoutside}">${sub2.linkView}</a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </sly>
+                                <sly data-sly-test="${sub2.itemCategory=='regularList'}">
+                                  <div class="row" data-sly-list.regularList="${sub2.regularList}">
+                                    <div class="col-lg-3 col-md-6 col-12 regularList">
+                                      <a href="${regularList.listLink}" target="_blank">${regularList.listText}</a>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceImage3}" class="header_banner">
+                                    <a href="${sub2.link3}" target="_blank"><img src="${sub2.fileReferenceImage3}" /></a>
+                                  </div>
+                                </sly>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+                <li>
+                  <a href="${headerNavSection.section2Url}" data-sly-test="${headerNavSection.section2Title}">
+                    ${headerNavSection.section2Title}</a>
+                  <span class="m_nav"></span>
+                  <div class="dropdown_nav">
+                    <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${headerNavSection.section2Title}</a>
+                    <div class="headerTabsLifeInsurance">
+                      <div class="row gx-0">
+                        <div class="col-lg-3 col-md-3 col-12">
+                          <div class="tab_header_links">
+                            <ul data-sly-list.sub="${headerNavSection.subNavSecTwoMulti}">
+                              <li class="${subList.first ? 'active' : ''}">
+                                <a href="${sub.subHeadingUrl}" data-sly-test="${sub.subHeading}">${sub.subHeading}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-9 col-12 equal_padding">
+                          <div class="tabContent" data-sly-list.sub2="${headerNavSection.subNavSecTwoMulti}">
+                            <div class="${sub2List.first ? 'tabItem active' : 'tabItem'}">
+                              <div class="m_header_links">
+                                <a href="${sub2.subHeadingUrl}" data-sly-test="${sub2.subHeading}">${sub2.subHeading}</a>
+                                <span></span>
+                              </div>
+                              <div class="tabItem_Accordion">
+                                <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${sub2.subHeading}</a>
+                                <sly data-sly-test="${sub2.itemCategory=='card'}">
+                                  <div class="row" data-sly-list.dropMenu="${sub2.cardList}">
+                                    <div class="${sub2.cardList.size  == 4 ? 'col-lg-3' : 'col-lg-4'}  col-md-6 col-12">
+                                      <div class="sub_nav">
+                                        <div class="sub_nav_normal">
+                                          <p data-sly-test="${dropMenu.cardTitle}">
+                                            ${dropMenu.cardTitle}
+                                            <span
+                                              data-sly-test="${dropMenu.statusText}"
+                                              class="ms-0 mt-1">${dropMenu.statusText}
+                                            </span>
+                                          </p>
+                                          <h6 data-sly-test="${dropMenu.bulletList}">
+                                            ${dropMenu.bulletList
+                                            @context='html'}</h6>
+                                        </div>
+                                        <div class="header_btns">
+                                          <a href="${dropMenu.ctaLink1}" target="_blank" class="header_premium_btn margin_right">${dropMenu.ctaButton1}</a>
+                                          <a class="btn_outline" href="${dropMenu.ctaLink2}">
+                                            ${dropMenu.ctaButton2}</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceBannerImage}" class="header_banner">
+                                    <a href="${sub2.cardImageLink}" target="_blank"><img src="${sub2.fileReferenceBannerImage}" /></a>
+                                  </div>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='list'}">
+                                  <sly data-sly-test="${sub2.customListCount5}">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList1 @context='html'}
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList2 @context='html'}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center last_sub_nav">
+                                      <a class="color_orange" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                    </div>
+                                    <div data-sly-test="${sub2.fileReferenceImage1}" class="header_banner" >
+                                      <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                    </div>
+                                  </sly>
+                                  <sly data-sly-test="${!sub2.customListCount5}">
+                                    <sly data-sly-test="${sub2.customList}">
+                                      <div class="row">
+                                        <div class="${sub2.fileReferenceImage1 ? 'col-lg-4 col-md-6 col-12' : ''}">
+                                          <div class="sub_nav sub_nav_list">
+                                            ${sub2.customList @context='html'}
+                                            <p class="last_sub_nav">
+                                              <a class="color_orange view_all_btn" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-6 col-12">
+                                          <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                        </div>
+                                      </div>
+                                    </sly>
+                                  </sly>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='imageCard'}">
+                                  <div class="header_team">
+                                    <div class="row" data-sly-list.imageCardList="${sub2.imagecardList}">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="row align-items-center">
+                                          <div class="col-6">
+                                            <img src="${imageCardList.fileReferenceImage2}" alt="${sub2.image2AltText}">
+                                          </div>
+                                          <div class="col-6 imageCardList">
+                                            <p class="mb-0" data-sly-test="${imageCardList.description}">
+                                              ${imageCardList.description
+                                              @context='html'}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center view_all_btn_sec6">
+                                      <p last_sub_nav>
+                                      <a class="color_orange" href="${sub2.linkoutside}">${sub2.linkView}</a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </sly>
+                                <sly data-sly-test="${sub2.itemCategory=='regularList'}">
+                                  <div class="row" data-sly-list.regularList="${sub2.regularList}">
+                                    <div class="col-lg-3 col-md-6 col-12 regularList">
+                                      <a href="${regularList.listLink}" target="_blank">${regularList.listText}</a>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceImage3}" class="header_banner">
+                                    <a href="${sub2.link3}" target="_blank"><img src="${sub2.fileReferenceImage3}" /></a>
+                                  </div>
+                                </sly>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="${headerNavSection.section3Url}" data-sly-test="${headerNavSection.section3Title}">
+                    ${headerNavSection.section3Title}</a>
+                  <span class="m_nav"></span>
+                  <div class="dropdown_nav">
+                    <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${headerNavSection.section3Title}</a>
+                    <div class="headerTabsLifeInsurance">
+                      <div class="row gx-0">
+                        <div class="col-lg-3 col-md-3 col-12">
+                          <div class="tab_header_links">
+                            <ul data-sly-list.sub="${headerNavSection.subNavSecThreeMulti}">
+                              <li class="${subList.first ? 'active' : ''}">
+                                <a href="${sub.subHeadingUrl}" data-sly-test="${sub.subHeading}">${sub.subHeading}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-9 col-12 equal_padding">
+                          <div class="tabContent" data-sly-list.sub2="${headerNavSection.subNavSecThreeMulti}">
+                            <div class="${sub2List.first ? 'tabItem active' : 'tabItem'}">
+                              <div class="m_header_links">
+                                <a href="${sub2.subHeadingUrl}" data-sly-test="${sub2.subHeading}">${sub2.subHeading}
+                                </a>
+                                <span></span>
+                              </div>
+                              <div class="tabItem_Accordion">
+                                <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${sub2.subHeading}
+                                </a>
+                                <sly data-sly-test="${sub2.itemCategory=='card'}">
+                                  <div class="row" data-sly-list.dropMenu="${sub2.cardList}">
+                                    <div class="${sub2.cardList.size  == 4 ? 'col-lg-3' : 'col-lg-4'}  col-md-6 col-12">
+                                      <div class="sub_nav">
+                                        <div class="sub_nav_normal">
+                                          <p data-sly-test="${dropMenu.cardTitle}">
+                                            ${dropMenu.cardTitle}
+                                            <span
+                                              data-sly-test="${dropMenu.statusText}"
+                                              class="ms-0 mt-1">${dropMenu.statusText}
+                                            </span>
+                                          </p>
+                                          <h6 data-sly-test="${dropMenu.bulletList}">
+                                            ${dropMenu.bulletList
+                                            @context='html'}</h6>
+                                        </div>
+                                        <div class="header_btns">
+                                          <a href="${dropMenu.ctaLink1}" target="_blank" class="header_premium_btn margin_right">${dropMenu.ctaButton1}</a>
+                                          <a class="btn_outline" href="${dropMenu.ctaLink2}">
+                                            ${dropMenu.ctaButton2}</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceBannerImage}" class="header_banner">
+                                    <a href="${sub2.cardImageLink}" target="_blank"><img src="${sub2.fileReferenceBannerImage}" /></a>
+                                  </div>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='list'}">
+                                  <sly data-sly-test="${sub2.customListCount5}">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList1 @context='html'}
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList2 @context='html'}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center last_sub_nav">
+                                      <a class="color_orange" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                    </div>
+                                    <div data-sly-test="${sub2.fileReferenceImage1}" class="header_banner" >
+                                      <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                    </div>
+                                  </sly>
+                                  <sly data-sly-test="${!sub2.customListCount5}">
+                                    <sly data-sly-test="${sub2.customList}">
+                                      <div class="row">
+                                        <div class="${sub2.fileReferenceImage1 ? 'col-lg-4 col-md-6 col-12' : ''}">
+                                          <div class="sub_nav sub_nav_list">
+                                            ${sub2.customList @context='html'}
+                                            <p class="last_sub_nav">
+                                              <a class="color_orange view_all_btn" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-6 col-12">
+                                          <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                        </div>
+                                      </div>
+                                    </sly>
+                                  </sly>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='imageCard'}">
+                                  <div class="header_team">
+                                    <div class="row" data-sly-list.imageCardList="${sub2.imagecardList}">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="row align-items-center">
+                                          <div class="col-6">
+                                            <img src="${imageCardList.fileReferenceImage2}" alt="${sub2.image2AltText}">
+                                          </div>
+                                          <div class="col-6 imageCardList">
+                                            <p class="mb-0" data-sly-test="${imageCardList.description}">
+                                              ${imageCardList.description
+                                              @context='html'}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center view_all_btn_sec6">
+                                      <p last_sub_nav>
+                                      <a class="color_orange" href="${sub2.linkoutside}">${sub2.linkView}</a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </sly>
+                                <sly data-sly-test="${sub2.itemCategory=='regularList'}">
+                                  <div class="row" data-sly-list.regularList="${sub2.regularList}">
+                                    <div class="col-lg-3 col-md-6 col-12 regularList">
+                                      <a href="${regularList.listLink}" target="_blank">${regularList.listText}</a>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceImage3}" class="header_banner">
+                                    <a href="${sub2.link3}" target="_blank"><img src="${sub2.fileReferenceImage3}" /></a>
+                                  </div>
+                                </sly>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="${headerNavSection.section4Url}" data-sly-test="${headerNavSection.section4Title}">
+                    ${headerNavSection.section4Title}</a>
+                  <span class="m_nav"></span>
+                  <div class="dropdown_nav">
+                    <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${headerNavSection.section4Title}</a>
+                    <div class="headerTabsLifeInsurance">
+                      <div class="row gx-0">
+                        <div class="col-lg-3 col-md-3 col-12">
+                          <div class="tab_header_links">
+                            <ul data-sly-list.sub="${headerNavSection.subNavSecFourMulti}">
+                              <li class="${subList.first ? 'active' : ''}">
+                                <a href="${sub.subHeadingUrl}" data-sly-test="${sub.subHeading}">${sub.subHeading}</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-9 col-12 equal_padding">
+                          <div class="tabContent" data-sly-list.sub2="${headerNavSection.subNavSecFourMulti}">
+                            <div class="${sub2List.first ? 'tabItem active' : 'tabItem'}">
+                              <div class="m_header_links">
+                                <a href="${sub2.subHeadingUrl}" data-sly-test="${sub2.subHeading}">${sub2.subHeading}</a>
+                                <span></span>
+                              </div>
+                              <div class="tabItem_Accordion">
+                                <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${sub2.subHeading}</a>
+                                <sly data-sly-test="${sub2.itemCategory=='card'}">
+                                  <div class="row" data-sly-list.dropMenu="${sub2.cardList}">
+                                    <div class="${sub2.cardList.size  == 4 ? 'col-lg-3' : 'col-lg-4'}  col-md-6 col-12">
+                                      <div class="sub_nav">
+                                        <div class="sub_nav_normal">
+                                          <p data-sly-test="${dropMenu.cardTitle}">
+                                            ${dropMenu.cardTitle}
+                                            <span
+                                              data-sly-test="${dropMenu.statusText}"
+                                              class="ms-0 mt-1">${dropMenu.statusText}
+                                            </span>
+                                          </p>
+                                          <h6 data-sly-test="${dropMenu.bulletList}">
+                                            ${dropMenu.bulletList
+                                            @context='html'}</h6>
+                                        </div>
+                                        <div class="header_btns">
+                                          <a href="${dropMenu.ctaLink1}" target="_blank" class="header_premium_btn margin_right">${dropMenu.ctaButton1}</a>
+                                          <a class="btn_outline" href="${dropMenu.ctaLink2}">
+                                            ${dropMenu.ctaButton2}</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceBannerImage}" class="header_banner">
+                                    <a href="${sub2.cardImageLink}" target="_blank"><img src="${sub2.fileReferenceBannerImage}" /></a>
+                                  </div>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='list'}">
+                                  <sly data-sly-test="${sub2.customListCount5}">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList1 @context='html'}
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList2 @context='html'}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center last_sub_nav">
+                                      <a class="color_orange" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                    </div>
+                                    <div data-sly-test="${sub2.fileReferenceImage1}" class="header_banner" >
+                                      <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                    </div>
+                                  </sly>
+                                  <sly data-sly-test="${!sub2.customListCount5}">
+                                    <sly data-sly-test="${sub2.customList}">
+                                      <div class="row">
+                                        <div class="${sub2.fileReferenceImage1 ? 'col-lg-4 col-md-6 col-12' : ''}">
+                                          <div class="sub_nav sub_nav_list">
+                                            ${sub2.customList @context='html'}
+                                            <p class="last_sub_nav">
+                                              <a class="color_orange view_all_btn" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-6 col-12">
+                                          <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                        </div>
+                                      </div>
+                                    </sly>
+                                  </sly>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='imageCard'}">
+                                  <div class="header_team">
+                                    <div class="row" data-sly-list.imageCardList="${sub2.imagecardList}">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="row align-items-center">
+                                          <div class="col-6">
+                                            <img src="${imageCardList.fileReferenceImage2}" alt="${sub2.image2AltText}">
+                                          </div>
+                                          <div class="col-6 imageCardList">
+                                            <p class="mb-0" data-sly-test="${imageCardList.description}">
+                                              ${imageCardList.description
+                                              @context='html'}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center view_all_btn_sec6">
+                                      <p last_sub_nav>
+                                      <a class="color_orange" href="${sub2.linkoutside}">${sub2.linkView}</a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </sly>
+                                <sly data-sly-test="${sub2.itemCategory=='regularList'}">
+                                  <div class="row" data-sly-list.regularList="${sub2.regularList}">
+                                    <div class="col-lg-3 col-md-6 col-12 regularList">
+                                      <a href="${regularList.listLink}" target="_blank">${regularList.listText}</a>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceImage3}" class="header_banner">
+                                    <a href="${sub2.link3}" target="_blank"><img src="${sub2.fileReferenceImage3}" /></a>
+                                  </div>
+                                </sly>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="${headerNavSection.section5Url}" data-sly-test="${headerNavSection.section5Title}">
+                    ${headerNavSection.section5Title}</a>
+                  <span class="m_nav"></span>
+                  <div class="dropdown_nav">
+                    <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${headerNavSection.section5Title}</a>
+                    <div class="headerTabsLifeInsurance">
+                      <div class="row gx-0">
+                        <div class="col-lg-3 col-md-3 col-12">
+                          <div class="tab_header_links">
+                            <ul data-sly-list.sub="${headerNavSection.subNavSecFiveMulti}">
+                              <li class="${subList.first ? 'active' : ''}">
+                                <a href="${sub.subHeadingUrl}" data-sly-test="${sub.subHeading}">${sub.subHeading}</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-9 col-12 equal_padding">
+                          <div class="tabContent" data-sly-list.sub2="${headerNavSection.subNavSecFiveMulti}">
+                            <div class="${sub2List.first ? 'tabItem active' : 'tabItem'}">
+                              <div class="m_header_links">
+                                <a href="${sub2.subHeadingUrl}" data-sly-test="${sub2.subHeading}">${sub2.subHeading}</a>
+                                <span></span>
+                              </div>
+                              <div class="tabItem_Accordion">
+                                <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${sub2.subHeading}</a>
+                                <sly data-sly-test="${sub2.itemCategory=='card'}">
+                                  <div class="row" data-sly-list.dropMenu="${sub2.cardList}">
+                                    <div class="${sub2.cardList.size  == 4 ? 'col-lg-3' : 'col-lg-4'}  col-md-6 col-12">
+                                      <div class="sub_nav">
+                                        <div class="sub_nav_normal">
+                                          <p data-sly-test="${dropMenu.cardTitle}">
+                                            ${dropMenu.cardTitle}
+                                            <span
+                                              data-sly-test="${dropMenu.statusText}"
+                                              class="ms-0 mt-1">${dropMenu.statusText}
+                                            </span>
+                                          </p>
+                                          <h6 data-sly-test="${dropMenu.bulletList}">
+                                            ${dropMenu.bulletList
+                                            @context='html'}</h6>
+                                        </div>
+                                        <div class="header_btns">
+                                          <a href="${dropMenu.ctaLink1}" target="_blank" class="header_premium_btn margin_right">${dropMenu.ctaButton1}</a>
+                                          <a class="btn_outline" href="${dropMenu.ctaLink2}">
+                                            ${dropMenu.ctaButton2}</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceBannerImage}" class="header_banner">
+                                    <a href="${sub2.cardImageLink}" target="_blank"><img src="${sub2.fileReferenceBannerImage}" /></a>
+                                  </div>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='list'}">
+                                  <sly data-sly-test="${sub2.customListCount5}">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList1 @context='html'}
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList2 @context='html'}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center last_sub_nav">
+                                      <a class="color_orange" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                    </div>
+                                    <div data-sly-test="${sub2.fileReferenceImage1}" class="header_banner" >
+                                      <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                    </div>
+                                  </sly>
+                                  <sly data-sly-test="${!sub2.customListCount5}">
+                                    <sly data-sly-test="${sub2.customList}">
+                                      <div class="row">
+                                        <div class="${sub2.fileReferenceImage1 ? 'col-lg-4 col-md-6 col-12' : ''}">
+                                          <div class="sub_nav sub_nav_list">
+                                            ${sub2.customList @context='html'}
+                                            <p class="last_sub_nav">
+                                              <a class="color_orange view_all_btn" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-6 col-12">
+                                          <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                        </div>
+                                      </div>
+                                    </sly>
+                                  </sly>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='imageCard'}">
+                                  <div class="header_team">
+                                    <div class="row" data-sly-list.imageCardList="${sub2.imagecardList}">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="row align-items-center">
+                                          <div class="col-6">
+                                            <img src="${imageCardList.fileReferenceImage2}" alt="${sub2.image2AltText}">
+                                          </div>
+                                          <div class="col-6 imageCardList">
+                                            <p class="mb-0" data-sly-test="${imageCardList.description}">
+                                              ${imageCardList.description
+                                              @context='html'}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center view_all_btn_sec6">
+                                      <p last_sub_nav>
+                                      <a class="color_orange" href="${sub2.linkoutside}">${sub2.linkView}</a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </sly>
+                                <sly data-sly-test="${sub2.itemCategory=='regularList'}">
+                                  <div class="row" data-sly-list.regularList="${sub2.regularList}">
+                                    <div class="col-lg-3 col-md-6 col-12 regularList">
+                                      <a href="${regularList.listLink}" target="_blank">${regularList.listText}</a>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceImage3}" class="header_banner">
+                                    <a href="${sub2.link3}" target="_blank"><img src="${sub2.fileReferenceImage3}" /></a>
+                                  </div>
+                                </sly>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a href="${headerNavSection.section6Url}" data-sly-test="${headerNavSection.section6Title}">
+                    ${headerNavSection.section6Title}</a>
+                  <span class="m_nav"></span>
+                  <div class="dropdown_nav">
+                    <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${headerNavSection.section6Title}</a>
+                    <div class="headerTabsLifeInsurance">
+                      <div class="row gx-0">
+                        <div class="col-lg-3 col-md-3 col-12">
+                          <div class="tab_header_links">
+                            <ul data-sly-list.sub="${headerNavSection.subNavSecSixMulti}">
+                              <li class="${subList.first ? 'active' : ''}">
+                                <a href="${sub.subHeadingUrl}" data-sly-test="${sub.subHeading}">${sub.subHeading}
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-lg-9 col-12 equal_padding">
+                          <div class="tabContent" data-sly-list.sub2="${headerNavSection.subNavSecSixMulti}">
+                            <div class="${sub2List.first ? 'tabItem active' : 'tabItem'}">
+                              <div class="m_header_links">
+                                <a href="${sub2.subHeadingUrl}" data-sly-test="${sub2.subHeading}">${sub2.subHeading}</a>
+                                <span></span>
+                              </div>
+                              <div class="tabItem_Accordion">
+                                <a class="back_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/header/back.svg" alt="">${sub2.subHeading}
+                                </a>
+                                <sly data-sly-test="${sub2.itemCategory=='card'}">
+                                  <div class="row" data-sly-list.dropMenu="${sub2.cardList}">
+                                    <div class="${sub2.cardList.size  == 4 ? 'col-lg-3' : 'col-lg-4'}  col-md-6 col-12">
+                                      <div class="sub_nav">
+                                        <div class="sub_nav_normal">
+                                          <p data-sly-test="${dropMenu.cardTitle}">
+                                            ${dropMenu.cardTitle}
+                                            <span
+                                              data-sly-test="${dropMenu.statusText}"
+                                              class="ms-0 mt-1">${dropMenu.statusText}
+                                            </span>
+                                          </p>
+                                          <h6 data-sly-test="${dropMenu.bulletList}">
+                                            ${dropMenu.bulletList
+                                            @context='html'}</h6>
+                                        </div>
+                                        <div class="header_btns">
+                                          <a href="${dropMenu.ctaLink1}" target="_blank" class="header_premium_btn margin_right">${dropMenu.ctaButton1}</a>
+                                          <a class="btn_outline" href="${dropMenu.ctaLink2}">
+                                            ${dropMenu.ctaButton2}</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceBannerImage}" class="header_banner">
+                                    <a href="${sub2.cardImageLink}" target="_blank"><img src="${sub2.fileReferenceBannerImage}" /></a>
+                                  </div>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='list'}">
+                                  <sly data-sly-test="${sub2.customListCount5}">
+                                    <div class="row">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList1 @context='html'}
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="sub_nav sub_nav_list">
+                                          ${sub2.customList2 @context='html'}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center last_sub_nav">
+                                      <a class="color_orange" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                    </div>
+                                    <div data-sly-test="${sub2.fileReferenceImage1}" class="header_banner" >
+                                      <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                    </div>
+                                  </sly>
+                                  <sly data-sly-test="${!sub2.customListCount5}">
+                                    <sly data-sly-test="${sub2.customList}">
+                                      <div class="row">
+                                        <div class="${sub2.fileReferenceImage1 ? 'col-lg-4 col-md-6 col-12' : ''}">
+                                          <div class="sub_nav sub_nav_list">
+                                            ${sub2.customList @context='html'}
+                                            <p class="last_sub_nav">
+                                              <a class="color_orange view_all_btn" href="${sub2.viewLink}">${sub2.viewText}</a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-6 col-12">
+                                          <a href="${sub2.link1}" target="_blank"><img src="${sub2.fileReferenceImage1}" /></a>
+                                        </div>
+                                      </div>
+                                    </sly>
+                                  </sly>
+                                </sly>
+  
+                                <sly data-sly-test="${sub2.itemCategory=='imageCard'}">
+                                  <div class="header_team">
+                                    <div class="row" data-sly-list.imageCardList="${sub2.imagecardList}">
+                                      <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="row align-items-center">
+                                          <div class="col-6">
+                                            <img src="${imageCardList.fileReferenceImage2}" alt="${sub2.image2AltText}">
+                                          </div>
+                                          <div class="col-6 imageCardList">
+                                            <p class="mb-0" data-sly-test="${imageCardList.description}">
+                                              ${imageCardList.description
+                                              @context='html'}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sub_nav sub_nav_list view_all_btn text-center view_all_btn_sec6">
+                                      <p last_sub_nav>
+                                      <a class="color_orange" href="${sub2.linkoutside}">${sub2.linkView}</a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </sly>
+                                <sly data-sly-test="${sub2.itemCategory=='regularList'}">
+                                  <div class="row" data-sly-list.regularList="${sub2.regularList}">
+                                    <div class="col-lg-3 col-md-6 col-12 regularList">
+                                      <a href="${regularList.listLink}" target="_blank">${regularList.listText}</a>
+                                    </div>
+                                  </div>
+                                  <div data-sly-test="${sub2.fileReferenceImage3}" class="header_banner">
+                                    <a href="${sub2.link3}" target="_blank"><img src="${sub2.fileReferenceImage3}" /></a>
+                                  </div>
+                                </sly>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="signup_search">
+            <ul>
+              <li class="search_icon"><a href="javascript:;" class="searchBtn"><img data-sly-test="${model.searchIcon}" src="${model.searchIcon}" alt="No Image Found"></a></li>
+              <li class="lang_toggle">
+                <div class="toggleWrapper" data-sly-use.togglemodel="com.chl.core.models.HeaderToggle">
+                  <input type="checkbox" id="langToggle" data-enLink="${togglemodel.englishPagePath}" data-hiLink="${togglemodel.hindiPagePath}"/>
+                  <label class="toggle" for="langToggle"><span class="toggle__handler"></span></label>
+                </div>
+              </li>
+              <li class="user_icon"><a href="${model.userLoginLink}"><img data-sly-test="${model.userLoginIcon}" src="${model.userLoginIcon}" alt="No Image Found"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="search_container">
+        <div class="container">
+          <div class="search_box">
+            <input id="search-key" type="text" placeholder="Search Here...">
+            <a id="searchPage" data-sly-test="${model.searchRedirectUrl}" searchPage="${model.searchRedirectUrl}" onclick="searchClick()"><img src="/content/dam/canarahsbclife/in/en/header/search.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="headerClear"></div>
+</sly>

@@ -1,0 +1,36 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.text}" />
+<section class="feedback_sec" data-sly-use.model="com.chl.core.models.ClaimRegisterModel" data-sly-test="${model.text}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="claim_feedback_right">
+                    <div class="heading-title">
+                        <h2 data-sly-test="${model.text}">${model.text}</h2>
+                        <div class="heading-title-lines" data-sly-test="${model.text}" >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p data-sly-test="${model.richtext}">${model.richtext @ context = 'html'}</p>
+                    <div class="imgsec">
+                        <img data-sly-test="${model.fileReference}" src="${model.fileReference}"
+                            data-sly-test="${model.imageAltText}" alt="${model.imageAltText}" />
+                    </div>
+                    <h3 data-sly-test="${model.description }">${model.description @ context = 'html'}</h3>
+
+                    <div data-sly-test="${model.claimRegisterTargetType != 'newWindow'}">
+                    	<a data-sly-test="${model.buttonname}" href="${model.claimRegisterLink}"
+                    	target="${model.claimRegisterTargetType}" class="blue_btn">${model.buttonname}</a>
+                    </div>
+
+                    <div data-sly-test="${model.claimRegisterTargetType == 'newWindow'}">
+                    	<a data-sly-test="${model.buttonname}" href="${model.claimRegisterLink}" 
+                        onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                   		class="blue_btn">${model.buttonname}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section> 

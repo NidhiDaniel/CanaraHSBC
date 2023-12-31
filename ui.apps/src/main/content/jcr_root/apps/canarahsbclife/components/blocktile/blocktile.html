@@ -1,0 +1,20 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<section class="whyus" data-sly-use.model="com.chl.core.models.BlockTile" data-sly-test="${model.title}">
+    <div class="container">
+        <h2 data-sly-test="${model.title}">${model.title}</h2>
+        <div class="swiper" id="WhySlider" >
+            <div class="swiper-wrapper" data-sly-list.titleimg="${model.blocktile}">
+                <div class="swiper-slide">
+                    <div class="whyus_box">
+                        <img data-sly-test="${titleimg.fileReference}" src="${titleimg.fileReference}"  data-sly-test="${titleimg.altText}" alt="${titleimg.altText}" >
+                        <h3 data-sly-test="${titleimg.subTitle}">${titleimg.subTitle}</h3>
+                        
+                        <p data-sly-test="${titleimg.richText}"><span>${titleimg.richText @context='html'}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

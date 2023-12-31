@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image Component Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<column jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/container">
+				<items jcr:primaryType="nt:unstructured">
+					<image jcr:primaryType="nt:unstructured"
+						sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+						class="cq-droptarget" fileNameParameter="./fileName"
+						fileReferenceParameter="./fileReference" fieldLabel="Image"
+						mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+						name="./file" rootPath="/content/dam/canarahsbclife" required="{Boolean}true"/>
+                    <imageLink jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+						fieldLabel="CTA URL" name="./imageLink" required="{Boolean}true"/>
+                    <imageTargetType jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/select"
+						fieldLabel="CTA URL Target Type" name="./imageTargetType">
+						<items jcr:primaryType="nt:unstructured">
+							<h1 jcr:primaryType="nt:unstructured" text="Same Window" value="_self" />
+							<h2 jcr:primaryType="nt:unstructured" text="New Tab" value="_blank" />
+							<h3 jcr:primaryType="nt:unstructured" text="New Window" value="newWindow" />
+						</items>
+					</imageTargetType>
+					<altText jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						fieldLabel="Image Alt Text" name="./altText" required="true" />
+					<styleCheckbox jcr:primaryType="nt:unstructured"
+						sling:resourceType="granite/ui/components/foundation/form/checkbox"
+						fieldDescription="To select Banner Style"
+						text="Banner Style" name="./bannerCheck" value="true" />
+				</items>
+			</column>
+		</items>
+	</content>
+</jcr:root>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page Guide Cards Properties"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    sling:resourceType="cq/gui/components/authoring/dialog" extraClientlibs="[canarahsbclife.dialog.pageguidecards]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Heading"
+                        name="./heading" required="{Boolean}true" validation=""/>
+                    <subTitle
+                        jcr:primaryType="nt:unstructured"
+						sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+						fieldLabel="Sub Title" name="./subTitle" useFixedInlineToolbar="{Boolean}true"/>
+                    <buttontarget jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="Same Window"
+                        fieldLabel="CTA-Button Target" name="./pageguidebuttonTarget">
+                            <items jcr:primaryType="nt:unstructured">
+                            <samewindow jcr:primaryType="nt:unstructured" value="_self" text="Same Window" name="./sameWindow" />
+                            <newtab jcr:primaryType="nt:unstructured" value="_blank" text="New Tab" name="./newTab" />
+                            <newwindow jcr:primaryType="nt:unstructured" value="newWindow" text="New Window" name="./newWindow" />
+                            </items>
+                    </buttontarget>
+                    <timer
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                        fieldDescription=""
+                        fieldLabel="Timer"
+                        value="4000"
+                        name="./pageguideTimer"/>
+                    <multi jcr:primaryType="nt:unstructured"
+                        granite:class="pageguidecards-seperation"
+						sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+						composite="{Boolean}true" fieldLabel="Page Guide Cards List">
+						<field jcr:primaryType="nt:unstructured"
+							sling:resourceType="granite/ui/components/coral/foundation/container"
+							name="./pageguideCards">
+							<items jcr:primaryType="nt:unstructured">
+                                <views
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Views"
+                                    name="./views" required="{Boolean}true" validation=""/>
+                                <title jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                    fieldLabel="Title" name="./title" fieldDescription="Enter Title"
+                                    useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="bold,italic"/>
+                                            <links
+                                                jcr:primaryType="nt:unstructured"
+                                                features="modifylink,unlink"/>
+                                            <styles
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                    <styles jcr:primaryType="nt:unstructured">
+                                                        <Heading
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cssName="heading"
+                                                            text="Heading"/>
+                                                    </styles>
+                                            </styles>
+                                            <paraformat
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                <formats jcr:primaryType="nt:unstructured">
+                                                    <default_p
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Paragraph"
+                                                        tag="p"/>
+                                                    <default_h1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 1"
+                                                        tag="h1"/>
+                                                    <default_h2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 2"
+                                                        tag="h2"/>
+                                                    <default_h3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 3"
+                                                        tag="h3"/>
+                                                    <default_h4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 4"
+                                                        tag="h4"/>
+                                                    <default_h5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 5"
+                                                        tag="h5"/>
+                                                    <default_h6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 6"
+                                                        tag="h6"/>
+                                                    <default_blockquote
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Quote"
+                                                        tag="blockquote"/>
+                                                    <default_pre
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Preformatted"
+                                                        tag="pre"/>
+                                                </formats>
+                                            </paraformat>
+                                        </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[#styles,format#bold,format#italic,links#modifylink,links#unlink,#paraformat]">
+                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                              <styles
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="styles:getStyles:styles-pulldown"
+                                                                ref="styles"/>
+                                                            <paraformat
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="paraformat:getFormats:paraformat-pulldown"
+                                                                ref="paraformat"/>
+                                                        </popovers>
+                                                    </inline>
+                                                </cui>
+                                            </uiSettings>
+                                </title>
+								<text jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                    fieldLabel="Description" name="./description" fieldDescription="Enter Description"
+                                    useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="bold,italic"/>
+                                            <links
+                                                jcr:primaryType="nt:unstructured"
+                                                features="modifylink,unlink"/>
+                                            <styles
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                    <styles jcr:primaryType="nt:unstructured">
+                                                        <Characterlimit
+                                                            jcr:primaryType="nt:unstructured"
+                                                            cssName="add_character_limit"
+                                                            text="Character Limit"/>
+                                                    </styles>
+                                            </styles>
+                                            <paraformat
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                <formats jcr:primaryType="nt:unstructured">
+                                                    <default_p
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Paragraph"
+                                                        tag="p"/>
+                                                    <default_h1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 1"
+                                                        tag="h1"/>
+                                                    <default_h2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 2"
+                                                        tag="h2"/>
+                                                    <default_h3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 3"
+                                                        tag="h3"/>
+                                                    <default_h4
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 4"
+                                                        tag="h4"/>
+                                                    <default_h5
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 5"
+                                                        tag="h5"/>
+                                                    <default_h6
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Heading 6"
+                                                        tag="h6"/>
+                                                    <default_blockquote
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Quote"
+                                                        tag="blockquote"/>
+                                                    <default_pre
+                                                        jcr:primaryType="nt:unstructured"
+                                                        description="Preformatted"
+                                                        tag="pre"/>
+                                                </formats>
+                                            </paraformat>
+                                        </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[#styles,format#bold,format#italic,links#modifylink,links#unlink,#paraformat]">
+                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                              <styles
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="styles:getStyles:styles-pulldown"
+                                                                ref="styles"/>
+                                                            <paraformat
+                                                                jcr:primaryType="nt:unstructured"
+                                                                items="paraformat:getFormats:paraformat-pulldown"
+                                                                ref="paraformat"/>
+                                                        </popovers>
+                                                    </inline>
+                                                </cui>
+                                            </uiSettings>
+                                </text>
+                                <pageurl jcr:primaryType="nt:unstructured"
+						            sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+						            fieldLabel="Page URL" name="./pageguidepageUrl" required="{Boolean}true"/>
+                                <buttontext jcr:primaryType="nt:unstructured"
+						            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+						            fieldLabel="Button Text" name="./pageguidebuttonText" required="{Boolean}true" validation="pageguidecards-buttonText-10char"/>
+							</items>
+						</field>
+					</multi>
+                    
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

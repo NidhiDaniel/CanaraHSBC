@@ -1,0 +1,74 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.cmp-heading_blueTitle {
+    .variation-title h2 {
+        padding: 50px 0px 80px;
+        color: #00ADEE;
+        font-size: 28px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .variation-title p {
+        font-size: 14px;
+        color: #666666;
+        font-weight: 400;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+.cmp-heading_blackTitle {
+
+    .variation-title h2 {
+        padding: 50px 0px 80px;
+        color: #606060;
+        font-size: 28px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .variation-title p {
+        font-size: 14px;
+        color: #666666;
+        font-weight: 400;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+}
+
+.variation-title-lines {
+    display: flex;
+    width: 100px;
+    margin: auto;
+
+    span {
+        display: block;
+        width: 33.333333px;
+        height: 3px;
+    }
+
+    span:nth-child(1) {
+        background: $primaryColor;
+    }
+
+    span:nth-child(2) {
+        background: $secondaryColor;
+    }
+
+    span:nth-child(3) {
+        background: #ed2027;
+    }
+
+}

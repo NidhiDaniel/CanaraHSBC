@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Ticker Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <text jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Ticker Text" name="./richText" fieldDescription="Enter Text"
+                        useFixedInlineToolbar="{Boolean}true"   required="{Boolean}true">
+                           <rtePlugins jcr:primaryType="nt:unstructured">
+                                               <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic"/>
+                                                <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink"/>
+                                                <styles
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                    <styles jcr:primaryType="nt:unstructured">
+                                                        <Info
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cssName="info"
+                                                                text="Info"/>
+                                                        <Warning
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cssName="warning"
+                                                                text="Warning"/>
+                                                        <Critical
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cssName="critical"
+                                                                text="Critical"/>        
+	                                                    <textcolorblue
+															jcr:primaryType="nt:unstructured"
+					 	                                    cssName="textcolorblue"
+															text="Text Colour Blue"/>
+                                                        <NewWindow
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cssName="newwindow"
+                                                                text="New Window"/>
+                                                    </styles>
+                                                </styles>
+                                            </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[#styles,format#bold,format#italic,links#modifylink,links#unlink,]">
+                                                        <popovers jcr:primaryType="nt:unstructured">                                                                                                                   
+                                                            <styles
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="styles:getStyles:styles-pulldown"
+                                                                    ref="styles"/>
+                                                        </popovers>
+                                                    </inline>
+                                                     </cui>
+                                            </uiSettings>
+                         </text>
+                     <layoutSpeed
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                        fieldLabel="Speed" fieldDescription="Enter Speed"
+                        value="10" 
+                        name="./layoutSpeed" />
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

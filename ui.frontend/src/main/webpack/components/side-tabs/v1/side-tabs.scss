@@ -1,0 +1,242 @@
+$condensedFont: 'Roboto Condensed', sans-serif;
+$primaryColor: #00ADEE;
+
+@mixin transition {
+    transition: all 0.3s ease;
+}
+
+.why_buy_section{
+    .why_buy_border{
+        border: 2px solid #d6d6d6;
+
+        .side_tab_container{
+
+            .side_nav_btns{
+                background: #fff;
+                width: 30%;
+
+                ul.nav{
+                    flex-direction: column;
+                    
+                    li{
+                        button{
+                            position: relative;
+                            text-align: left;
+                            width: 100%;
+                            padding: 20px;
+                            color: #38393CB8;
+                            background: transparent;
+                            border-bottom: 2px solid #d6d6d6;
+
+                            &.active{
+                                font-weight: 700;
+                                background: #f1f1f1;
+                                border-right: 0;
+
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    width: 3px;
+                                    height: 100%;
+                                    background: #f1f1f1;
+                                    top: 0;
+                                    right: -2px;
+                                }
+                            }
+                        }
+
+                        &:last-child button{
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .side_nav_content{
+                width: 70%;
+                padding: 30px;
+                border-right: 2px solid #d6d6d6;
+                border-left: 2px solid #d6d6d6;
+
+                .tab_title{
+                    p{
+                        font-size: 22px;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+                    
+                    h5{
+                        font-size: 30px;
+                        font-weight: 700;
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+
+        .download_section{
+            padding: 30px;
+            
+            .download_title{
+                h6{
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    color: $primaryColor;
+                }
+
+                h4{
+                    font-size: 32px;
+                    font-weight: 500;
+                    margin-top: 18px;
+                }
+            }
+
+            .download_box{
+                margin-top: 50px;
+
+                .download_list{
+                    border-bottom: 1px solid #E8F0F2;
+                    padding-bottom: 30px;
+                    margin-bottom: 20px;
+
+                    &:last-child{
+                        border-bottom: 0;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
+                    }
+
+                    a{
+                        display: block;
+                        position: relative;
+                        text-decoration: none;
+
+                        img{
+                            display: inline-block;
+                            width: 45px;
+                            height: fit-content;
+                            vertical-align: top;
+                        }
+    
+                        .download_text{
+                            display: inline-block;
+                            padding: 0 15px;
+                            vertical-align: top;
+    
+                            h5{
+                                font-size: 16px;
+                                color: #333;
+                                margin-bottom: 5px;
+                                @include transition();
+                            }
+
+                            p{
+                                font-size: 14px;
+                                color: #666;
+                            }
+                        }
+    
+                        span{
+                            position: absolute;
+                            right: 0;
+
+                            svg{
+                                width: 24px;
+                                height: 24px;
+                                transform: scale(1);
+                                @include transition();
+
+                                path{
+                                    @include transition();
+                                }
+                            }
+                        }
+
+                        &:hover{
+                            h5{
+                                color: $primaryColor;
+                            }
+
+                            svg{
+                                transform: scale(1.1);
+
+                                path{
+                                    stroke: $primaryColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.download_term_btn{
+    a{
+        text-transform: none;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 30px;
+        box-shadow: 0 20px 20px rgb(0 0 0 / 10%);
+
+        &:hover{
+            box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+        }
+    }
+}
+
+@media only screen and (max-width: 767px){
+
+    .why_buy_section{
+        padding-bottom: 10%;
+        
+        .why_buy_border{
+    
+            .side_tab_container{
+                padding: 20px;
+                border-bottom: 2px solid #d6d6d6;
+    
+                .side_nav_btns{
+                    background: transparent;
+                    width: 100%;
+
+                    select{
+                        font-family: $condensedFont;
+                        font-size: 18px;
+                        font-weight: 700;
+                        width: 100%;
+                        background: url("/dam/choice/side-tabs/images/dd-down.svg") no-repeat center right 20px #fff;
+                        padding: 10px 20px;
+                        margin-bottom: 30px;
+                        color: $primaryColor;
+                        border-radius: 8px;
+                        border: 2px solid #EFECEC;
+
+                        option{
+                            color: #333;
+                        }
+                    }
+                }
+    
+                .side_nav_content{
+                    width: 100%;
+                    padding: 0;
+                    border: 0;
+    
+                    .tab_title{
+                        p{
+                            font-size: 18px;
+                        }
+                        
+                        h5{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

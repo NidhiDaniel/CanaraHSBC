@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Message By Component Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog" extraClientlibs="[canarahsbclife.dialog.messagebycomponent]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                  <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title" fieldDescription="Enter Title"
+                        name="./title" required="{Boolean}true" validation="messagebycomponent-title-100char"/>
+                    <styleCheckbox jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        fieldDescription="Tick For Variation 2"
+                        text="Check to  show 3 cards" name="./tickforvariation"  uncheckedValue="false"
+                        value="true" />
+                    <ctaTargetType jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="Same Window"
+                        fieldLabel="CTA Button Target Type" name="./messgeCTAbuttonTargetType">
+                        <items jcr:primaryType="nt:unstructured">
+                        <samewindow jcr:primaryType="nt:unstructured" value="_self" text="Same Window" />
+                        <newtab jcr:primaryType="nt:unstructured" value="_blank" text="New Tab" />
+                        <newwindow jcr:primaryType="nt:unstructured" value="newWindow" text="New Window"/>
+                        </items>
+                    </ctaTargetType>
+                    <multi
+                        jcr:primaryType="nt:unstructured" granite:class="messagecardlist-seperation"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Card List">
+                    <field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        name="./multifield">
+                        <items jcr:primaryType="nt:unstructured" >
+                    <userImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        class="cq-droptarget"
+                        fieldLabel="User Image" fieldDescription="Upload Image"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        name="./userImage" required="{Boolean}true"/>
+                    <altText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="User Image Alt Text" fieldDescription="Enter Alt Text"
+                        name="./altText"
+                        required="true"/>
+		            <name
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Name" fieldDescription="Enter Name"
+                        name="./name" required="{Boolean}true" validation="messagebycomponent-name-25char"/>
+		            <designation
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Designation" fieldDescription="Enter Designation"
+                        name="./designation" required="{Boolean}true"/>
+		            <message
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Message" fieldDescription="Enter Description"
+                        name="./message" useFixedInlineToolbar="{Boolean}true" required="{Boolean}true" validation="messagebycomponent-message-300char"/>
+		            <ctabuttonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Button Name" fieldDescription="Enter Button Name"
+                        name="./mesageCTAbuttonname" required="{Boolean}true" validation="messagebycomponent-mesageCTAbuttonname-10char"/>
+		            <ctabuttonLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                        fieldLabel="Button URL" fieldDescription="Enter URL"
+                        name="./messgeCTAbuttonUrl"
+                        required="true"/>
+                        </items>
+                    </field>
+                    </multi>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

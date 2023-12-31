@@ -1,0 +1,25 @@
+.info {
+  color: #888888;
+}
+.textcolorblue {
+  color: #00ADEE;
+}
+.marquee_section {
+  background: #F5F5F5;
+  padding: 12px 0px 6px;
+}
+.marquee_section marquee {
+  font-size: 16px;
+  font-weight: 700;
+}
+.marquee_section marquee p {
+  display: inline;
+}
+@media only screen and (max-width: 767px) {
+  .marquee_section marquee p {
+    font-weight: 500;
+  } 
+}
+.marquee_section p a {
+  color: #00ADEE;
+}

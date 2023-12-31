@@ -1,0 +1,83 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+.whyus{ 
+	background: $primaryColor;
+	padding: 0px 0px 50px;
+	text-align: center;
+
+	h2{
+		font-size: 30px; 
+		color: $colorWhite;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+
+	.whyus_box{
+		background: $colorWhite;
+		box-shadow: 0px 4px 44px rgba(138, 138, 138, 0.06);
+        border-radius: 10px;
+		padding: 50px 60px 30px;
+		min-height: 356px;
+
+		@media only screen and (max-width: 1024px){
+			padding: 50px 30px 30px;
+		}
+
+		h3{
+			font-size: 35px;
+			color: $colorGrey;
+			font-weight: 600;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+		h4{
+			font-size: 18px;
+			color: $colorGrey;
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+		p{
+			font-size: 15px;
+			color: $colorGrey;
+			font-weight: 500;
+			line-height: 24px;
+			span{
+				display: block;
+			}
+		}
+		
+	}
+
+	.swiper-pagination {
+		display: none;
+		text-align: center;
+		margin-top: 20px;
+
+		@media only screen and (max-width: 991px){
+			display: block;
+		}
+
+		span {
+			width: 8px;
+			height: 8px;
+			background: transparent;
+			display: block;
+			border-radius: 50%;
+			display: inline-block;
+			margin: 0 5px;
+			border: 1px solid $colorWhite;
+			transition: all 0.3s ease;
+
+			&.swiper-pagination-bullet-active {
+				width: 20px;
+				background: $colorWhite;
+				border-radius: 3px;
+			}
+		}
+	}
+}

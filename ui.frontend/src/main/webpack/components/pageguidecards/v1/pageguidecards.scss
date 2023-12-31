@@ -1,0 +1,244 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.insurance_guide_sec{
+	padding: 70px 0px;
+	position: relative;
+
+
+	.heading-title {
+		margin-bottom: 40px;
+
+		h2{
+			color: $primaryColor;
+		}
+	}
+
+	.swiper-slide{
+		height: auto;
+	}
+
+	.insurance_guide_box{
+		border: 2px solid #EAEAEA;
+		border-radius: 28px;
+		position: relative;
+		transition: 0.4s;
+		height: 100%;
+
+		.imgsec img{
+			border-radius: 26px 26px 0px 0px;
+		}
+
+		.insurance_guide_bottom{
+			padding: 15px 20px 60px;
+
+			span{
+				font-size: 14px;
+				font-weight: 400;
+				color: rgba(0, 0, 0, 0.4);
+			}
+
+			.time_view{
+				margin: 10px 0;
+
+				div{
+					margin-right: 10px;
+
+					img{
+						margin-right: 3px;
+						opacity: 0.4;
+					}
+				}
+			}
+
+			h3{
+				a{
+					font-size: 18px;
+					color: #606060;
+					font-weight: 500;
+					margin-bottom: 15px;
+					margin-top: 5px;
+					line-height: 25px;
+
+					&:hover{
+						color: $primaryColor;
+					}
+				}
+			}
+
+			.heading{
+				
+					font-size: 18px;
+					color: #606060;
+					font-weight: 600;
+					margin-bottom: 15px;
+					margin-top: 5px;
+					line-height: 25px;
+
+					a{
+						font-size: 18px;
+						color: #606060;
+						font-weight: 600;
+						margin-bottom: 15px;
+						margin-top: 5px;
+						line-height: 25px;
+
+						&:hover{
+							color: $primaryColor;
+						}
+					}
+				
+			}
+
+			p{
+				font-size: 14px;
+				color: #555555;
+				font-weight: 400;
+				line-height: 25px;
+				margin-bottom: 15px;
+			}
+			
+			p>span{
+				font-size: 14px;
+				color: #555555;
+				font-weight: 400;
+				line-height: 25px;
+				margin-bottom: 15px;
+			}
+
+			a.premium_btn{
+				position: absolute;
+				bottom:-22px;
+				font-size: 16px;
+				font-weight: 400;
+				right: 0;
+				left: 0;
+				width: 130px;
+				margin: auto;
+				padding: 8px 20px;
+				border-width: 2px;
+				text-align: center;
+
+				@media only screen and (max-width: 1024px){
+					left:20%;
+					right:20%;
+					text-align: center;
+				}
+			}
+		}
+		&:hover{
+			box-shadow: 0px -2px 0px rgba(235, 238, 245, 0.5), 0px 10px 20px rgba(192, 194, 200, 0.4);
+			cursor: pointer;
+		}
+	}
+	.swiper{
+		padding: 0 30px;
+	}
+
+		.swiper-pagination {
+			text-align: center;
+			margin-top: 40px;
+
+		 span {
+			width: 8px;
+			height: 8px;
+			background: #F5F5F5;
+			display: block;
+			border-radius: 40px;
+			display: inline-block;
+			margin: 0 5px;
+			border: 1px solid $primaryColor;
+			transition: all 0.3s ease;
+		}
+
+		span.swiper-pagination-bullet-active {
+			width: 20px;
+			background: #00ADEE;
+		}
+	}
+
+	@media only screen and (max-width: 767px){
+		.imgsec img{
+			width: 100%;
+		}
+
+		.swiper_guide_next,
+		.swiper_guide_prev{
+			width: 50px;
+			height: 50px;
+			background: #F5F5F5;
+			border-radius: 50%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			transition: all 0.3s ease;
+			z-index: 10;
+
+			&::after{
+				content: "";
+				height: 8px;
+				width: 8px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border-top: 2px solid #0000008c;
+				border-right: 2px solid #0000008c;
+				margin: auto;
+				transition: all 0.3s ease;
+			}
+
+			&:hover{
+				background:$primaryColor;
+			}
+			
+			&:hover::after{
+				border-top: 2px solid #fff;
+				border-right: 2px solid #fff;
+			}
+			
+			@media only screen and (max-width: 767px){
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		.swiper_guide_next{
+			right: -70px;
+
+			@media only screen and (max-width: 1024px){
+				right: -30px;
+			}
+			@media only screen and (max-width: 767px){
+				right: 10px;
+			}
+
+			&::after{
+				transform: rotate(45deg);
+			}
+		}
+
+		.swiper_guide_prev{
+			left: -70px;
+
+			@media only screen and (max-width: 1024px){
+				left: -30px;
+			}
+			@media only screen and (max-width: 767px){
+				left: 10px;
+			}
+
+			&::after{
+				transform: rotate(225deg);
+			}
+		}
+	}
+
+}

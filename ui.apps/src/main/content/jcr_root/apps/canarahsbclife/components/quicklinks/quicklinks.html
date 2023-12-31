@@ -1,0 +1,65 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.titleicon}" />
+
+<div class="sticky_quick_links" data-sly-use.model="com.chl.core.models.QuickLink" data-sly-test="${model.title}">
+    <a class="quick_sticky_btn" href="javascript:;" >${model.title}</a>
+    <ul data-sly-list.item="${model.quickLink}">
+
+        <li  data-sly-test="${!item.checkBox}">
+        <div data-sly-test="${item.ctaTextTargetType != 'newWindow'}" >
+              <a   href="${item.ctaTextUrl}" target="${item.ctaTextTargetType}">
+               <img data-sly-test="${item.ctaIcon}" src="${item.ctaIcon}" 
+                width="150" height="150" data-sly-test="${item.ctaText}">
+                 <span>${item.ctaText}</span>
+            </a>
+            </div>
+            <div data-sly-test="${item.ctaTextTargetType == 'newWindow'}" >
+              <a   href="${item.ctaTextUrl}"  onclick="window.open(this.href, '_blank', 'width=1000,height=800');
+                     return false;" >
+               <img data-sly-test="${item.ctaIcon}" src="${item.ctaIcon}" 
+                width="150" height="150" data-sly-test="${item.ctaText}">
+                 <span>${item.ctaText}</span>
+            </a>
+            </div>
+
+        </li>
+ <li  data-sly-test="${item.checkBox}" >
+              <a  data-bs-toggle="modal"  href="#resumeJourneyPopup">
+               <img data-sly-test="${item.ctaIcon}" src="${item.ctaIcon}" 
+                width="150" height="150" data-sly-test="${item.ctaText}">
+                 <span>${item.ctaText}</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+
+<!-- Language Popup Starts -->
+<div class="modal fade" id="resumeJourneyPopup" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Resume Journey</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="resume_journey_link">
+                    <ul data-sly-list.demo="${model.quickLinkModel}">
+                        <li>
+                         <div data-sly-test="${model.popupTargetType != 'newWindow'}" >
+
+                        <a href="${demo.textLink }" target="${model.popupTargetType}"  data-sly-test="${demo.text}"> ${demo.text}</a>
+                        </div>
+						 <div data-sly-test="${model.popupTargetType == 'newWindow'}" >
+						  <a href="${demo.textLink }" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"  
+                          data-sly-test="${demo.text}"> ${demo.text}</a>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Language Popup Ends -->

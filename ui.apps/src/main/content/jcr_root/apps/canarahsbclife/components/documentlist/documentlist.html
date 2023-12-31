@@ -1,0 +1,65 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+
+<div class="documentlist_main">
+    <div class="download_section" data-sly-use.model="com.chl.core.models.DocumentListModel" data-sly-test="${model.title}">
+        <input type="hidden" id="Documentlist_seemore" name="seemore" value="${model.seeMoreButton}">
+        <input type="hidden" id="Documentlist_shownItems" name="shownItems" value="0">
+        <div class="heading-title text-start">
+            <h2>${model.title}</h2>
+            <h4 data-sly-test="${model.subtitle}">${model.subtitle}</h4>
+            <div class="heading-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="documentlist_download_list">
+            <ul>
+                <li class="docpopUp" data-sly-repeat.lanImg="${model.docLang @ begin = 0, step = 2, end = 1}">
+                    <a  href="javascript:;">
+                       <span data-sly-test="${model.multilangTitle}">
+                           <img src="${lanImg.image}" alt="">
+                       </span>
+                       <span data-sly-test="${model.multilangTitle}">
+                           <p>${model.multilangTitle}</p>
+                       </span>
+                       <span data-sly-test="${model.multilangTitle}">
+                           <img src="${lanImg.download}" alt="">
+                       </span>                     
+                   </a>                  
+                </li>
+                <li data-sly-repeat.documentList="${model.documentList}" data-sly-test="${model.documentList}">
+                    <a href="${documentList.fileLink}" target="_blank">
+                        <span data-sly-test="${documentList.imagePath}">
+                            <img src="${documentList.imagePath}" alt="">
+                        </span>
+                        <span data-sly-test="${documentList.documentTitle}">
+                            <p>${documentList.documentTitle}</p>
+                        </span>
+                        <span data-sly-test="${documentList.documentTitle}">
+                            <img src="${documentList.downloadImage}" alt="">
+                        </span>
+                    </a>
+                </li> 
+            </ul>
+        </div>
+        <div class="modal fade" id="vernacularLanguagePopup" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Language Options</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="language_box">
+                            <ul data-sly-list.lanList="${model.docLang}">
+                                <li><a target="_blank" href="${lanList.langFileLink}">${lanList.languageList}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

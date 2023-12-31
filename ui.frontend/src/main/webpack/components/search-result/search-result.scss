@@ -1,0 +1,55 @@
+#loadMore {
+  width: 200px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: blue;
+  transition: .3s;
+}
+#loadMore:hover {
+  color: blue;
+  background-color: #fff;
+  border: 1px solid blue;
+  text-decoration: none;
+}
+
+#noContent {
+
+  display: none;
+        text-align: center;
+
+}
+
+
+.results{
+border-bottom: 1px solid #aaa;}
+.resultSection {
+      width: 86%;
+    height: 100%;
+    padding: 50px;
+    border: 1px solid lightblue;
+    margin-left: 6%;
+
+}
+	.cmp-search__field{margin-left: 46%;
+    margin-top: 17%;}
+.search-but{cursor:pointer;}
+#search{z-index:999;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,0.9);-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;-ms-transition:all .5s ease-in-out;transition:all .5s ease-in-out;-webkit-transform:translate(0px,-100%) scale(0,0);-moz-transform:translate(0px,-100%) scale(0,0);-o-transform:translate(0px,-100%) scale(0,0);-ms-transform:translate(0px,-100%) scale(0,0);transform:translate(0px,-100%) scale(0,0);opacity:0}
+#search input[type=search]{position:absolute;top:50%;width:100%;color:#000;background:rgba(0,0,0,0);font-size:60px;font-weight:300;text-align:center;border:0;margin:0 auto;margin-top:-51px;padding-left:30px;padding-right:30px;outline:none}
+#search .btn-primary{position:absolute;top:48% !important;left:49%;margin-top:61px;margin-left:-45px;background-color:#ef7f1a;border:#000;font-size:20px;padding:5px 30px;}
+#search .close{position:fixed;top:15px;right:15px;color:#fff;background-color:#ef7f1a;opacity:1;padding:10px 17px;font-size:27px}
+#search #search-key{        font-size: 39px !important;}
+#search.open{-webkit-transform:translate(0px,0px) scale(1,1);-moz-transform:translate(0px,0px) scale(1,1);-o-transform:translate(0px,0px) scale(1,1);-ms-transform:translate(0px,0px) scale(1,1);transform:translate(0px,0px) scale(1,1);opacity:1;}
+@media only screen and (max-width:767px) {
+#search input[type=search] {font-size:30px;}
+#search .btn-primary{margin-top:10px;transform: translateX(-50%);margin-left:auto;}
+
+
+}
+  @media only screen and (min-device-width: 1281px) {
+#search .btn-primary{position:absolute;top:42% !important;left:49%;margin-top:61px;margin-left:-45px;background-color:#ef7f1a;border:#000;font-size:20px;padding:5px 30px;}
+        }

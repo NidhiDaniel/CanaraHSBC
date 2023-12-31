@@ -1,0 +1,127 @@
+$primaryFont: 'Roboto', sans-serif;
+$primaryColor: #00ADEE;
+$secondaryColor: #FFC10E;
+$bg-grey: #F5F5F5;
+
+.plan-highlights.key-highlights {
+    background: $bg-grey;
+    padding: 50px 0;
+
+    @media only screen and (max-width: 767px) {
+        padding: 40px 0;
+    }
+
+
+    @media only screen and (max-width: 540px) and (min-width: 530px) {
+        h2 {
+            font-size: 26px;
+        }
+    }
+
+
+    @media only screen and (max-width: 412px) {
+        p.text-center {
+            margin-left: -2px;
+            text-align: center;
+        }
+    }
+
+    img.key-banner {
+        border-radius: 10px;
+
+        @media only screen and (max-width: 991px) {}
+    }
+
+    img.image-key-banner {
+        border-radius: 10px;
+
+        @media only screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    .key_list {
+        padding-left: 5%;
+
+        @media only screen and (max-width: 991px) {
+            padding-left: 0;
+        }
+
+        ul {
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 85%;
+                    height: 1px;
+                    background: #c1c1c1;
+                    right: 0;
+                    bottom: 0;
+
+                    @media only screen and (max-width: 767px) {
+                        width: 80%;
+                    }
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                .key_icon {
+                    width: 15%;
+
+                    @media only screen and (max-width: 767px) {
+                        width: 20%;
+                    }
+
+                    span {
+                        display: block;
+                        background: #fff;
+                        width: 55px;
+                        height: 55px;
+                        border-radius: 50%;
+                        margin-right: 20px;
+                        text-align: center;
+                        line-height: 55px;
+                        box-shadow: 0px 6px 4px 0px #0000000F;
+                    }
+                }
+
+                .key_list_content {
+                    width: 85%;
+
+                    @media only screen and (max-width: 767px) {
+                        width: 80%;
+                    }
+
+                    p {
+                        span {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.planhighlights.key_list_content p a {
+    color: #00ADEE;
+    font-weight: 700;
+
+}
+
+.textcolour {
+    color: #00ADEE;
+}

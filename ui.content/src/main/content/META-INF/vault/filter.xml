@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/canarahsbclife"/>
+    <filter root="/content/canarahsbclife" mode="merge"/>
+    <filter root="/content/dam/canarahsbclife/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/canarahsbclife" mode="merge"/>
+    <filter root="/conf/canarahsbclife/settings/wcm/policies/canarahsbclife/components"/>
+</workspaceFilter>

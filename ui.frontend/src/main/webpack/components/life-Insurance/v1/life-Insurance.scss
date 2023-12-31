@@ -1,0 +1,104 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.life_insurance_sec {
+	padding: 70px 0px;
+	background: #F5F5F5;
+	border-radius: 0px 0px 30px 30px;
+
+	@media only screen and (max-width: 767px){
+		padding: 50px 0px;
+	}
+
+	.heading-title {
+		margin-bottom: 30px;
+	}
+
+	.life_insurance_right {
+		p {
+			font-size: 14px;
+			color: #555555;
+			font-weight: 400;
+			line-height: 25px;
+			margin: 12px 0px;
+		}
+
+		a {
+			font-size: 14px;
+			color: #555555;
+			font-weight: 400;
+			line-height: 25px;
+			margin: 12px 0px;
+		}
+
+		a:hover {
+			color: #00ADEE;
+
+		}
+	}
+
+	.insurance_btn {
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 60px;
+
+		@media only screen and (max-width: 991px){
+			margin-top: 40px;
+		}
+
+		@media only screen and (max-width: 767px){
+			margin-top: 20px;
+		}
+	}
+
+	a.blue_btn {
+		text-align: center;
+		margin: o auto;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+}
+
+
+
+.insuranceModal {
+	.modal-dialog {
+		max-width: 700px;
+
+		.modal-content {
+			border-radius: 0;
+
+			.modal-body {
+				padding: 10px 10px 5px 10px;
+
+				iframe,
+				video {
+					width: 100%;
+				}
+			}
+
+			.modal-header {
+				border-bottom: 1px solid #e5e5e5;
+
+				.modal-title {
+					font-size: 22px;
+
+					.btn-close {
+						color: #000;
+						opacity: 1;
+						font-size: 15px;
+						font-weight: 300;
+
+						&:hover {
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+		}
+	}
+}

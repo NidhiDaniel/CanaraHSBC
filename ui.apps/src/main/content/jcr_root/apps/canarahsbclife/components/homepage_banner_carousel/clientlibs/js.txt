@@ -1,0 +1,2 @@
+#base=js
+banner-carousel.js

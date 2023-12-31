@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/canarahsbclife/clientlibs"/>
+    <filter root="/apps/canarahsbclife/components"/>
+    <filter root="/apps/canarahsbclife/i18n"/>
+    <filter root="/apps/sling" />
+    <filter root="/apps/msm/canarahsbclife_blueprint" mode="merge"/>
+</workspaceFilter>

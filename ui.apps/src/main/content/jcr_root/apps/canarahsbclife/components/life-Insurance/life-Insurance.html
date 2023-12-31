@@ -1,0 +1,55 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<section class="life_insurance_sec" data-sly-use.model="com.chl.core.models.LifeInsurance" data-sly-test="${model.title}">
+  <div class="container">
+    <div class="heading-title">
+      <h2 data-sly-test="${model.title}">${model.title}</h2>
+      <div class="heading-title-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="life_insurance_left">
+          <div class="ratio ratio-16x9" data-sly-test="${model.checkbox}">
+            <a href="javascript:;" class="play-video" data-bs-toggle="modal" data-bs-target="#insuranceModal" data-sly-test="${model.pathLink}" data-value="${model.pathLink}">
+              <img src="${model.fileReference}" alt="What is Life Insurance?" title="What is Life Insurance?" />
+            </a>
+          </div>
+          <div class="ratio ratio-16x9" data-sly-test="${!model.checkbox}">
+            <iframe class="embed-responsive-item" data-sly-test="${model.pathLink}" src="${model.pathLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="life_insurance_right" data-sly-test="${model.description}">
+          <p>${model.description@context='html'}</p>
+        </div>
+      </div>
+    </div>
+    <div class="insurance_btn" data-sly-test="${model.targetType_insurance != 'newWindow'}">
+      <a data-sly-test="${model.buttonLink_insurance}" href="${model.buttonLink_insurance}" class="blue_btn" target="${model.targetType_insurance}">${model.buttonName_insurance}</a>
+    </div>
+    <div class="insurance_btn" data-sly-test="${model.targetType_insurance=='newWindow'}">
+      <a class="blue_btn" href="${model.buttonLink_insurance}" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;">${model.buttonName_insurance}</a>
+    </div>
+  </div>
+  <!-- The Modal -->
+  <div class="modal fade insuranceModal" id="insuranceModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">What is Life Insurance?</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <iframe class="popupIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

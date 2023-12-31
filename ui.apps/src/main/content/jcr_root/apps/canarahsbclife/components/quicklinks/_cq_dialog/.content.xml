@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Quicklinks Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[canarahsbclife.dialog.quicklink]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"  maxlength="15"
+                        fieldLabel="Title"
+                        name="./title"
+                        required="true" />
+                    <multi
+                        jcr:primaryType="nt:unstructured"
+                        granite:class="quicklinklist-seperation"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Quicklink Items" validation="multifield-validation">
+                        <granite:data jcr:primaryType="nt:unstructured"
+                        max-item="7" />
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./quicklinks">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <ctaIcon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    class="cq-droptarget"
+                                    fieldLabel="CTA-Text Icon image"
+                                    fileNameParameter="./fileName"
+                                    fileReferenceParameter="./fileReference"
+                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                    name="./ctaIcon" required="{Boolean}true" rootPath="/content/dam/canarahsbclife"/>
+                                <ctaText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" maxlength="25"
+                                    fieldLabel=" CTA-Text"
+                                    name="./ctaText"
+                                    required="true"/>
+                                 <checkbox
+                                            granite:class="cq-dialog-checkbox-showhide"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Enable this to get a pop-up window screen to list further titles under this heading"
+                                            name="./checkBox"
+                                            text="Popup CheckBox"
+                                            value="true">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                cq-dialog-checkbox-showhide-target=".togglefield"/>
+                                        </checkbox>
+                                        <toggle
+                                            granite:class="togglefield"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                        <ctaTextUrl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            fieldLabel="CTA-TextURL" fieldDescription="You can add the required URL here when the pop-up option is disabled"
+                                            name="./ctaTextUrl"/>
+                                            <ctaTextTargetType jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                emptyText="Same Window"
+                                                fieldLabel="CTA-Text Target Type" name="./ctaTextTargetType">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                    <samewindow jcr:primaryType="nt:unstructured" value="_self" text="Same Window" name="./sameWindow" />
+                                                    <newtab jcr:primaryType="nt:unstructured" value="_blank" text="New Tab" name="./newTab" />
+                                                    <newwindow jcr:primaryType="nt:unstructured" value="newWindow" text="New Window" name="./newWindow" />
+                                                    </items>
+                                            </ctaTextTargetType>
+                                    </items>
+                                </toggle>
+
+                            </items>
+                        </field>
+                    </multi>
+                    <popupTargetType jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        emptyText="Same Window"
+                        fieldLabel="Popup Text Target Type" name="./popupTargetType">
+                            <items jcr:primaryType="nt:unstructured">
+                            <samewindow jcr:primaryType="nt:unstructured" value="_self" text="Same Window" name="./sameWindow" />
+                            <newtab jcr:primaryType="nt:unstructured" value="_blank" text="New Tab" name="./newTab" />
+                            <newwindow jcr:primaryType="nt:unstructured" value="newWindow" text="New Window" name="./newWindow" />
+                            </items>
+                    </popupTargetType>
+                    <multi1
+                        jcr:primaryType="nt:unstructured"
+                        granite:class="quicklinklist-seperation"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Popup Items" >
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./multifield">
+                            <items jcr:primaryType="nt:unstructured">
+                                <Text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" maxlength="40"
+                                    fieldLabel=" Text"
+                                    name="./text"
+                                    required="true"/>
+
+                                <TextLink
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldLabel="TextLink" fieldDescription="Enter URL"
+                                    name="./textLink"
+                                    required="true"/>
+                            </items>
+                        </field>
+                    </multi1>
+                </items>
+            </column>
+        </items>
+        </content>
+</jcr:root>

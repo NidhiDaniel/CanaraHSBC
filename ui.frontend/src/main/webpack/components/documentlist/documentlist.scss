@@ -1,0 +1,99 @@
+$primaryColor: #00ADEE;
+$colorGrey: #666666;
+$colorWhite: #fff;
+$colorDarkGrey: #433F3F;
+$colorLight: #EAEAEA;
+$secondaryColor: #FFC10E;
+$colorBlack: #000;
+
+.download_section {
+    padding: 25px;
+    border: 2px solid #EAEAEA;
+    background-color: #fff;
+
+    @media only screen and (max-width: 767px) {
+        padding: 20px;
+    }
+
+    .heading-title {
+        margin-bottom: 30px;
+
+        h2 {
+            font-weight: 400;
+        }
+
+        .heading-title-lines {
+            margin: initial;
+        }
+    }
+
+    .documentlist_download_list {
+        ul {
+            li {
+                border-bottom: 1px solid #c1c1c1;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+
+                &:last-child {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+
+                &.more {
+                    text-align: center;
+                    color: $primaryColor;
+                    font-weight: 700;
+                    cursor: pointer;
+                }
+
+                a {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    
+                    &:hover{
+                        color: #00ADEE;
+                    }
+                    span:nth-child(1) {
+                        margin-right: 20px;
+
+                        img {
+                            width: 45px;
+                        }
+                    }
+
+                    span:nth-child(3) {
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.language_box{
+    padding: 0 10px;
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+
+        li{
+            width: 33.333333%;
+
+            a{
+                color: $primaryColor;
+                padding: 10px 0;
+
+                &:hover{
+                    color: $colorBlack;
+                }
+            }
+        }
+    }
+}
+.documentlist_main{
+   // padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .9);
+}

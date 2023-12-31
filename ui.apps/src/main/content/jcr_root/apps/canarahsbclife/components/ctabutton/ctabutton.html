@@ -1,0 +1,15 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.button}" />
+<section data-sly-use.model="com.chl.core.models.CtaButtonModel">
+	   <div class="text-center" data-sly-test="${model.ctaButtonTargetType != 'newWindow'}">
+         <a class="blue_btn" data-sly-test="${model.ctaButtonLink}" href="${model.ctaButtonLink}" 
+		    target="${model.ctaButtonTargetType}" data-sly-test="${model.button}">
+            ${model.button}</a>
+		 </div>	
+		<div class="text-center" data-sly-test="${model.ctaButtonTargetType=='newWindow'}">
+         <a class="blue_btn" data-sly-test="${model.ctaButtonLink}" href="${model.ctaButtonLink}" 
+		    data-sly-test="${model.button}" 
+		    onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;">
+            ${model.button}</a>
+		 </div>	
+</section>

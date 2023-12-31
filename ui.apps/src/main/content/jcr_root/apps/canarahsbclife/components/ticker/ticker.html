@@ -1,0 +1,10 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.richText}" />
+<div data-sly-use.model="com.chl.core.models.TickerComponent" data-sly-test="${model.richText}">
+<section class="marquee_section">
+    <marquee onmouseover="this.stop();" onmouseout="this.start();" data-sly-test="${model.layoutSpeed}" scrollamount="${model.layoutSpeed}">
+   <p data-sly-test="${model.richText}">${model.richText@context='html'} </p>
+    </marquee>
+</section>
+</div>
+

@@ -1,0 +1,66 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+
+
+<section class="main_slider" data-sly-use.model="com.chl.core.models.BannerModel">
+    <sly data-sly-call="${template.placeholder @ isEmpty=!model.fileReferenceDesktop}" />
+    <input type="hidden" id="link1" name="link1" value="${model.button1Link}">
+    <input type="hidden" id="targetType1" name="targetType1" value="${model.button1Target}">
+
+    <input type="hidden" id="link2" name="link2" value="${model.button2Link}">
+    <input type="hidden" id="targetType2" name="targetType2" value="${model.button2Target}">
+    <input type="hidden" id="imageLink" name="imageLink" value="${model.imageLink}">
+    <input type="hidden" id="imageTarget" name="imageTarget" value="${model.imageTarget}">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-sm-12"></div>
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <div class="main_slider_image">
+                            <a href="javascript:;"  onclick="$.fn.imagecheck()">
+                                <picture>
+                                    <source media="(max-width: 767px)" data-sly-test="${model.fileReferenceMobile}"
+                                        srcset="${model.fileReferenceMobile}">
+
+                                    <img data-sly-test="${model.fileReferenceDesktop}"
+                                        src="${model.fileReferenceDesktop}" data-sly-test="${model.altText}"
+                                        alt="${model.altText}" value="${model.altText}" loading="lazy">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_slider_content" data-sly-test="${model.fileReference}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-6 col-sm-12">
+                                <img src="${model.fileReference}" value="${model.altText}"
+                                    title="${model.coverTitle}" />
+
+                                <h2>${model.coverDescription @context="html"}</h2>
+
+                                <div class="slider_btn">
+                                    
+                                    <a class="blue_btn" href="javascript:;" onclick="$.fn.check()">
+                                        ${model.button1Text}</a>
+                                    
+                                    <a class="white_btn" onclick="$.fn.btncheck()"
+                                        href="javascript:;">${model.button2Text}</a>
+                                </div>
+                                <small>${model.infoText}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="line d-sm-flex">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</section>

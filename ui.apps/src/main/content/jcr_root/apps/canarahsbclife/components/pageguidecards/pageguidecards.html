@@ -1,0 +1,57 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.heading}" />
+
+<section class="insurance_guide_sec" data-sly-use.model="com.chl.core.models.PageGuideCardsModel" data-sly-test="${model.heading}">
+    <div class="container">
+        
+        <input type="hidden" id="pageguidecardstimer" name="pageguidecardstimer" value="${model.pageguideTimer}">
+
+        <div class="heading-title">
+            <h2 data-sly-test="${model.heading}">${model.heading}</h2>
+            <div class="heading-title-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="insuranceSlider">
+            <div class="swiper" id="insuranceGuideSlider">
+                <div class="swiper-wrapper" data-sly-list.item="${model.pageguideCards}">
+                    <div class="swiper-slide">
+                        <div class="insurance_guide_box">
+                            
+                            <div class="imgsec">
+                                <img src="${item.thumbnail}" >
+                            </div>
+                            <div class="insurance_guide_bottom">
+                                <span>Last Updated</span>
+                                <div class="time_view d-flex">
+                                    <div>
+                                        <img src="/content/dam/canarahsbclife/in/en/insurance-guide/time.png" alt="">
+                                        <span data-sly-test="${item.date}" >${item.date}</span>
+                                    </div>
+                                    <div>
+                                        <img src="/content/dam/canarahsbclife/in/en/insurance-guide/view.png" alt="">
+                                        <span data-sly-test="${item.views}">${item.views} Views</span>
+                                    </div>
+                                </div>
+                                <p data-sly-test="${item.title}" class="heading">${item.title @context='html'}</p>
+                                <p data-sly-test="${item.description}" class="">${item.description @context='html'}</p>
+                                
+                                <div data-sly-test="${model.PageguidebuttonTarget != 'newWindow'}">
+                                    <a data-sly-test="${item.pageguidepageUrl}" href="${item.pageguidepageUrl}" target="${model.getPageguidebuttonTarget}" class="premium_btn">${item.pageguidebuttonText}</a>
+                                </div>
+                                <div data-sly-test="${model.PageguidebuttonTarget== 'newWindow'}">
+                                    <a data-sly-test="${item.pageguidepageUrl}" href="${item.pageguidepageUrl}" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;" class="premium_btn">${item.pageguidebuttonText}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="swiper_guide_next"></div>
+        <div class="swiper_guide_prev"></div>
+    </div>
+</section>

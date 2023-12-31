@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-09-04T22:22:15.223+05:30"
+        cq:lastModifiedBy="admin"
+        cq:policy="canarahsbclife/components/basepage/policy_product_page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/core/components/policies/mappings">
+        <root
+            cq:policy="canarahsbclife/components/container/policy_product_page_root"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/core/components/policies/mapping">
+            <experiencefragment-header
+                cq:policy="canarahsbclife/components/experiencefragment/policy_product_page_header"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+            <experiencefragment-footer
+                cq:policy="canarahsbclife/components/experiencefragment/policy_product_page_footer"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping"/>
+            <container
+                cq:policy="canarahsbclife/components/container/policy_product_page_main"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping">
+                <container
+                    cq:policy="canarahsbclife/components/container/policy_product_page_container"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping"/>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

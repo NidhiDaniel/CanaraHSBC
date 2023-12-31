@@ -1,0 +1,43 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.text}" />
+<section data-sly-use.model="com.chl.core.models.PlanHighlightsModel" class="plan-highlights bg-grey key-highlights" data-sly-test="${model.text}">
+    <div class="container">
+        <div class="content-header mb-4 mb-lg-5">
+            <div class="heading-title">
+                <h2 data-sly-test="${model.text}">${model.text @ context = 'html'}</h2>
+                <div class="heading-title-lines" data-sly-test="${model.text}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <p class="text-center" data-sly-test="${model.subTitle}">${model.subTitle}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 col-12" data-sly-test="${model.checkBox}">
+                <img class="key-banner" data-sly-test="${model.fileReference}" src="${model.fileReference}" alt="${model.altText}"
+                    value="${model.altText}">
+            </div>
+            <div class="col-lg-6 col-sm-12 col-12" data-sly-test="${!model.checkBox}">
+                <img class="image-key-banner" data-sly-test="${model.fileReference}" src="${model.fileReference}" alt="${model.altText}"
+                    value="${model.altText}">
+            </div>
+            <div class="col-lg-6 col-sm-12 col-12">
+                <div class="key_list">
+                    <ul data-sly-list.item="${model.planHighlights}">
+                        <li>
+                            <div class="key_icon">
+                                <span>
+                                    <img data-sly-test="${item.iconImage}" src="${item.iconImage}">
+                                </span>
+                            </div>
+                            <div class="planhighlights key_list_content">
+                                <p class="color_blue" data-sly-test="${item.title}">${item.title @ context = 'html'}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

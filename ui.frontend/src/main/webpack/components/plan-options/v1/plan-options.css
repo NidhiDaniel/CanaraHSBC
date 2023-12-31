@@ -1,0 +1,153 @@
+.plan_option_main {
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: left;
+}
+.plan_option_main h2,
+.plan_option_main h5 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.plan_option_main p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.plan_option_main .plan_option_slider {
+  border-top: 2px solid #d6d6d6;
+  margin-top: 40px;
+}
+.plan_option_main .plan_option_slider .swiper {
+  padding: 0 2px;
+}
+.plan_option_main .plan_option_slider .swiper-slide {
+  height: auto;
+}
+.plan_option_main .plan_option_slider .swiper-slide.swiper-slide-next {
+  border-right: 2px solid #d6d6d6;
+  border-left: 2px solid #d6d6d6;
+}
+.plan_option_main .plan_option_slider .swiper-button-lock {
+  display: none;
+}
+.plan_option_main .plan_option_slider .swiper-button-next,
+.plan_option_main .plan_option_slider .swiper-button-prev {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: #00ADEE;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.plan_option_main .plan_option_slider .swiper-button-next:hover,
+.plan_option_main .plan_option_slider .swiper-button-prev:hover {
+  background: #FFC10E;
+}
+.plan_option_main .plan_option_slider .swiper-button-next.swiper-button-disabled,
+.plan_option_main .plan_option_slider .swiper-button-prev.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: auto;
+}
+.plan_option_main .plan_option_slider .swiper-button-next::before,
+.plan_option_main .plan_option_slider .swiper-button-prev::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.plan_option_main .plan_option_slider .swiper-button-prev::before {
+  transform: rotate(225deg);
+  left: 15px;
+}
+.plan_option_main .plan_option_slider .swiper-button-next {
+  right: 0;
+}
+.plan_option_main .plan_option_slider .swiper-button-next::before {
+  transform: rotate(45deg);
+  left: 12px;
+}
+.plan_option_main .plan_option_slider .plan_box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 50px;
+  height: 100%;
+}
+.plan_option_main .plan_option_slider .plan_box h5 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  padding-right: 40px;
+}
+.plan_option_main .plan_option_slider .plan_box .list {
+  margin-bottom: 30px;
+}
+.plan_option_main .plan_option_slider .plan_box a {
+  border-color: #00ADEE;
+  background: transparent;
+}
+.plan_option_main .plan_option_slider .plan_box a:hover {
+  background: #00ADEE;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 961px) {
+  .plan_option_main .plan_option_slider .swiper-slide.swiper-slide-next {
+    border-right: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .plan_option_main {
+    padding-bottom: 10%;
+  }
+  .plan_option_main p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .plan_option_main .plan_option_slider {
+    border-top: 0;
+    margin-top: 20px;
+  }
+  .plan_option_main .plan_option_slider .swiper-slide {
+    opacity: 0.3;
+    height: auto;
+  }
+  .plan_option_main .plan_option_slider .swiper-slide.swiper-slide-active {
+    opacity: 1;
+  }
+  .plan_option_main .plan_option_slider .swiper-slide.swiper-slide-next {
+    border: 0;
+  }
+  .plan_option_main .plan_option_slider .swiper-button-next,
+.plan_option_main .plan_option_slider .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    bottom: auto;
+  }
+  .plan_option_main .plan_option_slider .swiper-button-prev {
+    top: 50%;
+    right: 0;
+  }
+  .plan_option_main .plan_option_slider .swiper-button-prev::before {
+    left: 17px;
+  }
+  .plan_option_main .plan_option_slider .swiper-button-next {
+    top: 40%;
+    right: 0;
+  }
+  .plan_option_main .plan_option_slider .swiper-button-next::before {
+    left: 14px;
+  }
+  .plan_option_main .plan_option_slider .plan_box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+  }
+}/*# sourceMappingURL=plan-options.css.map */

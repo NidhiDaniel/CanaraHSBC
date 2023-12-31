@@ -1,0 +1,62 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.altText}" />
+<section class="main_slider" data-sly-use.model="com.chl.core.models.ProductPageBannerModel">
+    <div class="row g-0">
+        <div class="col-lg-5 col-md-6 col-sm-12"></div>
+        <div class="col-lg-7 col-md-6 col-sm-12">
+            <div class="main_slider_img">
+                <picture>
+                    <source media="(max-width:767px)" data-sly-test="${model.fileReferenceMobile}"
+                        srcset="${model.fileReferenceMobile}" data-sly-test="${model.mobileAltText}"
+                        alt="${model.mobileAltText}">
+                    <img data-sly-test="${model.fileReferenceDesktop}" src="${model.fileReferenceDesktop}"
+                        data-sly-test="${model.altText}" alt="${model.altText}" loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </div>
+    <div class="main_slider_content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <picture class="d-block mb-3">
+                        <img data-sly-test="${model.fileReferenceLogo}" src="${model.fileReferenceLogo}"
+                            data-sly-test="${model.logoAltText}" alt="${model.logoAltText}">
+                    </picture>
+                    <input type="hidden" id="toggle" value="${model.titleCheckbox}" />
+                    <h3 id="box" class="mb-3" data-sly-test="${model.text}">
+                        ${model.text}</h3>
+                    <p class="mb-3" data-sly-test="${model.description}">${model.description @ context = 'html'}</p>
+                    <div data-sly-test="${model.productBannerTargetType != 'newWindow'}">
+                        <a class="blue_btn" data-sly-test="${model.productBannerLink}" href="${model.productBannerLink}"
+                            target="${model.productBannerTargetType}" data-sly-test="${model.button}">
+                            ${model.button}</a>
+                    </div>
+                    <div data-sly-test="${model.productBannerTargetType=='newWindow'}">
+                        <a class="blue_btn" data-sly-test="${model.productBannerLink}" href="${model.productBannerLink}"
+                            data-sly-test="${model.button}"
+                            onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;">
+                            ${model.button}</a>
+                    </div>
+                    <div data-sly-test="${model.pageBannerTargetType != 'new_window'}">
+                        <a class="white_btn ms-0 mt-3" data-sly-test="${model.pageBannerLink}"
+                            href="${model.pageBannerLink}" target="${model.pageBannerTargetType}"
+                            data-sly-test="${model.ctaButton}">
+                            ${model.ctaButton}</a>
+                    </div>
+                    <div data-sly-test="${model.pageBannerTargetType=='new_window'}">
+                        <a class="white_btn ms-0 mt-3" data-sly-test="${model.pageBannerLink}"
+                            href="${model.pageBannerLink}" data-sly-test="${model.ctaButton}"
+                            onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;">
+                            ${model.ctaButton}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line d-flex" data-sly-test="${model.fileReferenceLogo}">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>

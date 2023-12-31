@@ -1,0 +1,147 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.delay}" />
+<section class="homepage_main_slider" data-sly-use.model="com.chl.core.models.BannerList">
+
+    <input type="hidden" id="bannerDelay" name="bannerDelay" value="${model.delay}">
+    <input type="hidden" id="disableInteraction" name="disableInteraction" value="${model.autopauseDisabled}">
+
+    <div class="swiper" id="mainSlider">
+
+        <div class="swiper-wrapper" data-sly-list.item="${model.bannerList}">
+
+            <div class="swiper-slide" data-sly-test="${!item.imageCheck}">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-sm-12"></div>
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <div class="main_slider_image">
+                            <sly data-sly-test="${item.imageTarget != 'newWindow'}">
+                                <a href="${item.imageLink}" target="${item.imageTarget}">
+                            </sly>
+                            <sly data-sly-test="${item.imageTarget == 'newWindow'}">
+                                <a href="${item.imageLink}"
+                                    onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;">
+                            </sly>
+                            <picture>
+                                <source media="(max-width: 767px)" alt="${item.mobileAltText}"
+                                    srcset="${item.fileReferenceMobile}">
+
+                                <img data-sly-test="${item.fileReferenceDesktop}" src="${item.fileReferenceDesktop}"
+                                    alt="${item.desktopAltText}" value="${item.desktopAltText}" loading="lazy">
+                            </picture>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="homepage_main_slider_content" data-sly-test="${!item.checkBox}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-6 col-sm-12" data-sly-test="${item.fileReferenceLogoImage}">
+                                <img src="${item.fileReferenceLogoImage}" alt="${item.logoAltText}" />
+
+                                <h2>${item.coverDescription @context="html"}</h2>
+
+                                <div class="slider_btn">
+                                    <sly data-sly-test="${item.button1Target != 'newWindow'}">
+                                        <a class="blue_btn" href="${item.button1Link}" target="${item.button1Target}"
+                                            data-sly-test="${item.button1Text}">
+                                            ${item.button1Text}</a>
+                                    </sly>
+                                    <sly data-sly-test="${item.button1Target == 'newWindow'}">
+                                        <a class="blue_btn" href="${item.button1Link}"
+                                            onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                            data-sly-test="${item.button1Text}">
+                                            ${item.button1Text}</a>
+                                    </sly>
+                                    <sly data-sly-test="${item.button2Target != 'newWindow'}">
+                                        <a class="white_btn ms-0 mt-3" href="${item.button2Link}"
+                                            target="${item.button2Target}"
+                                            data-sly-test="${item.button2Text}">${item.button2Text}</a>
+                                    </sly>
+                                    <sly data-sly-test="${item.button2Target == 'newWindow'}">
+                                        <a class="white_btn ms-0 mt-3" href="${item.button2Link}"
+                                            onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                            data-sly-test="${item.button2Text}">${item.button2Text}</a>
+                                    </sly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="homepage_main_slider_content" data-sly-test="${item.checkBox=='true'}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-6 col-sm-12">
+                                <div class="slider_content">
+                                    <img class="slider_logos" src="${item.fileReferenceLogoImage}"
+                                        alt="${item.logoAltText}">
+                                    <h2>${item.coverDescription @context="html"}</h2>
+
+                                    <div class="pay_get d-sm-block d-flex">
+                                        <div class="d-sm-flex">
+                                            <picture>
+                                                <source media="(max-width: 767px)" alt="${item.tagImage1MobileAltText}"
+                                                    srcset="${item.fileReferenceTagImage1Mobile}">
+                                                <img src="${item.fileReferenceTagImage1Desktop}"
+                                                    alt="${item.tagImage1DesktopAltText}">
+                                            </picture>
+                                            <h4>${item.tagImage1Description @context="html"}</h4>
+                                        </div>
+                                        <div class="d-sm-flex">
+                                            <picture>
+                                                <source media="(max-width: 767px)" alt="${item.tagImage2MobileAltText}"
+                                                    srcset="${item.fileReferenceTagImage2Mobile}">
+                                                <img src="${item.fileReferenceTagImage2Desktop}"
+                                                    alt="${item.tagImage2DesktopAltText}">
+                                            </picture>
+                                            <h4>${item.tagImage2Description @context="html"}</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider_btn">
+                                        <sly data-sly-test="${item.button1Target != 'newWindow'}">
+                                            <a class="blue_btn" href="${item.button1Link}"
+                                                target="${item.button1Target}" data-sly-test="${item.button1Text}">
+                                                ${item.button1Text}</a>
+                                        </sly>
+                                        <sly data-sly-test="${item.button1Target == 'newWindow'}">
+                                            <a class="blue_btn" href="${item.button1Link}"
+                                                onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                                data-sly-test="${item.button1Text}">
+                                                ${item.button1Text}</a>
+                                        </sly>
+                                        <sly data-sly-test="${item.button2Target != 'newWindow'}">
+                                            <a class="white_btn ms-0 mt-3" href="${item.button2Link}"
+                                                target="${item.button2Target}"
+                                                data-sly-test="${item.button2Text}">${item.button2Text}</a>
+                                        </sly>
+                                        <sly data-sly-test="${item.button2Target == 'newWindow'}">
+                                            <a class="white_btn ms-0 mt-3" href="${item.button2Link}"
+                                                onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                                data-sly-test="${item.button2Text}">${item.button2Text}</a>
+                                        </sly>
+                                    </div>
+
+                                    <small>${item.infoText}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" data-sly-test="${item.imageCheck}">
+                <picture>
+                    <source media="(max-width:767px)" srcset="${item.fileReferenceMobile}" alt="${item.mobileAltText}">
+                    <img class="banner-image" src="${item.fileReferenceDesktop}" alt="${item.desktopAltText}"
+                        loading="lazy">
+                </picture>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="line d-sm-flex" data-sly-test="${model.delay}">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</section>

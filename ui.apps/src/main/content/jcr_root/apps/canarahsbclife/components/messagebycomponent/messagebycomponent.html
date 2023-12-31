@@ -1,0 +1,94 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.title}" />
+<div data-sly-use.model="com.chl.core.models.MessageByComponent" data-sly-test="${model.title}">
+    <div data-sly-test="${properties.tickforvariation}">
+        <section class="leadership_sec">
+            <div class="container">
+                <div class="heading-title">
+                    <h2 data-sly-test="${model.title}">${model.title}</h2>
+                    <div class="heading-title-lines" data-sly-test="${model.title}">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="swiper" id="leadershipSlider">
+                    <div class="swiper-wrapper" data-sly-list.item="${model.cardList}">
+                        <div class="swiper-slide">
+                            <div class="leadership_box">
+                                <img data-sly-test="${item.fileReference}" src="${item.fileReference}"
+                                    data-sly-test="${item.altText}" alt="${item.altText}" title="${item.name}" />
+                                <h3 data-sly-test="${item.name}">${item.name}</h3>
+                                <h5 data-sly-test="${item.designation}">${item.designation}</h5>
+                                <p data-sly-test="${item.message}">${item.message @context='html'}</p>
+                                <div data-sly-test="${model.messgeCTAbuttonTargetType != 'newWindow'}">
+                                    <a data-sly-test="${item.messgeCTAbuttonUrl}" href="${item.messgeCTAbuttonUrl}"
+                                        target="${model.getMessgeCTAbuttonTargetType}"
+                                        class="premium_btn">${item.mesageCTAbuttonname} </a>
+                                </div>
+                                <div data-sly-test="${model.messgeCTAbuttonTargetType == 'newWindow'}">
+                                    <a data-sly-test="${item.messgeCTAbuttonUrl}" href="${item.messgeCTAbuttonUrl}"
+                                        onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                        class="premium_btn">${item.mesageCTAbuttonname} </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper_leadership_next"></div>
+                <div class="swiper_leadership_prev"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Page Starts -->
+    <div data-sly-test="${!properties.tickforvariation}">
+        <section class="feedback_sec pb-0">
+            <div class="container">
+                <div class="feedback_right">
+                    <div class="leadership_sec p-0">
+                        <div class="heading-title">
+                            <h2 data-sly-test="${model.title}">${model.title}</h2>
+                            <div class="heading-title-lines" data-sly-test="${model.title}">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="swiper" id="leadershipSliderProduct">
+                            <div class="swiper-wrapper" data-sly-list.item="${model.cardList}">
+                                <div class="swiper-slide">
+                                    <div class="leadership_box">
+                                        <img data-sly-test="${item.fileReference}" src="${item.fileReference}"
+                                            data-sly-test="${item.altText}" alt="${item.altText}"
+                                            title="${item.name}" />
+                                        <h3 data-sly-test="${item.name}">${item.name}</h3>
+                                        <h5 data-sly-test="${item.designation}">${item.designation}</h5>
+                                        <p data-sly-test="${item.message}">${item.message @context='html'}</p>
+                                        <div data-sly-test="${model.messgeCTAbuttonTargetType != 'newWindow'}">
+                                            <a data-sly-test="${item.messgeCTAbuttonUrl}"
+                                                href="${item.messgeCTAbuttonUrl}"
+                                                target="${model.getMessgeCTAbuttonTargetType}"
+                                                class="premium_btn">${item.mesageCTAbuttonname} </a>
+                                        </div>
+                                        <div data-sly-test="${model.messgeCTAbuttonTargetType == 'newWindow'}">
+                                            <a data-sly-test="${item.messgeCTAbuttonUrl}"
+                                                href="${item.messgeCTAbuttonUrl}"
+                                                onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"
+                                                class="premium_btn">${item.mesageCTAbuttonname} </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <div class="swiper_leadership_product_next"></div>
+                        <div class="swiper_leadership_product_prev"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+</div>
+<!-- Product Page Ends -->

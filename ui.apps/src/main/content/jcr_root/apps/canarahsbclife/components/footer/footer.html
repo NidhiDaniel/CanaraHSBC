@@ -1,0 +1,182 @@
+<!-- Footer Starts [Add class "switchColor" to reverse the background color] -->
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html" />
+<sly data-sly-call="${template.placeholder @ isEmpty=!properties.heading11}" />
+<footer>
+    <div class="top_footer" data-sly-use.model="com.chl.core.models.FooterModel" data-sly-test="${model.heading11}">
+        <div class="container">
+            <div class="footer_accordion">
+                <div class="footer_acc_content">
+                    <div class="footer_row">
+                        <div class="width_20">
+                            <div class="footer_links">
+                                <h6>
+                                    <a href="${model. url11}" data-sly-test="${model.heading11}">${model.heading11}</a>
+                                    <span><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></span>
+                                </h6>
+                                <ul class="footer_collapse" data-sly-list.titleimg="${model.footerlist}">
+                                    <li><a href="${titleimg.titleUrl111}" data-sly-test="${titleimg.title111}">${titleimg.title111}</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="width_20">
+                            <div class="footer_links">
+                                <h6>
+                                    <a href="${model.url12}" data-sly-test="${model.heading12}">${model.heading12}</a>
+                                    <span><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></span>
+                                </h6>
+                                <ul class="footer_collapse"  data-sly-list.titleimg1="${model.details}">
+                                    <li><a href="${titleimg1.titleUrl12}" data-sly-test="${titleimg1.title112}">${titleimg1.title112}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="width_20">
+                            <div class="footer_links">
+                                <h6>
+                                    <a href="${model.url13}" data-sly-test="${model.heading13}">${model.heading13} </a>
+                                    <span><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></span>
+                                </h6>
+                                <ul class="footer_collapse" data-sly-list.titleimg2="${model.footer}">
+                                    <li><a href="${titleimg2.titleUrl13}" data-sly-test="${titleimg2.title113}">${titleimg2.title113}</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="width_20">
+                            <div class="footer_links">
+                                <h6>
+                                <a href="${model.url14}" data-sly-test="${model.heading14}">${model.heading14}</a>
+                                <span><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></span>
+                            </h6>
+                                <ul class="footer_collapse" data-sly-list.titleimg3="${model.title}">
+                                    <li><a href="${titleimg3.titleUrl14}" data-sly-test="${titleimg3.title114}">${titleimg3.title114}</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="width_20">
+                            <div class="footer_links footer_contact_links">
+                                <h6 data-sly-test="${model.contactTitle}">${model.contactTitle}<span><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></span></h6>
+                                <div class="footer_collapse">
+                                    <ul>
+                                        
+                                        <li>
+                                            <span><img data-sly-test="${model.locationLogo}" src="${model.locationLogo}" alt=""></span>
+                                            <p><a href="https://maps.google.com/?q=${model.addressText}" data-sly-test="${model.addressText}">${model.addressText}</a></p>
+                                        </li>
+                                        <li>
+                                            <span><img data-sly-test="${model.phoneLogo}" src="${model.phoneLogo}" alt=""></span>
+                                            <h6 data-sly-test="${model.phoneTitle}">${model.phoneTitle}</h6>
+                                            <p data-sly-test="${model.phoneNumber}">Toll Free: <a href="tel:${model.phoneNumber}">${model.phoneNumber}</a></p>
+                                        </li>
+                                        <li>
+                                            <span><img data-sly-test="${model.emailLogo}" src="${model.emailLogo}" alt=""></span>
+                                            <h6 data-sly-test="${model.emailTitle}">${model.emailTitle}</h6>
+                                            <p data-sly-test="${model.emailAddress}"><a href="mailto:${model.emailAddress}">${model.emailAddress}</a></p>
+                                        </li> 
+                                        
+                                    </ul>
+
+                                    <div class="footer_social_links">
+                                        
+
+                                            
+                                        <h5 data-sly-test="${model.heading}">${model.heading}</h5>
+                                        <div class="footer_social_links_icons" data-sly-test="${model.logoType != 'newWindow'}" data-sly-list.title="${model.logolist}">
+
+                                            <a data-sly-test="${title.imageUrl}" href="${title.imageUrl}" target="${model.logoType}"><img  data-sly-test="${title.image}" src="${title.image}" alt=""></a>
+
+                                            
+                                        </div>
+                                        <div class="footer_social_links_icons" data-sly-test="${model.logoType == 'newWindow'}" data-sly-list.title="${model.logolist}">
+
+                                            <a data-sly-test="${title.imageUrl}" href="${title.imageUrl}" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;"><img  data-sly-test="${title.image}" src="${title.image}" alt=""></a>
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="footer_acc_btn rotate" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></a>
+            </div>
+            
+            <div class="footer_accordion" data-sly-repeat.topfootersub="${model.list}">
+                <div class="footer_acc_content">
+                    <div class="footer_row"data-sly-list.topfooter="${topfootersub.test}" >
+                        <div class="width_20" >
+                        
+                            <div class="footer_links">
+                                <h6><a href="${topfooter.headingUrl}" data-sly-test="${topfooter.titleHeading}">${topfooter.titleHeading}</a> <span><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></span></h6>
+                                <ul class="footer_collapse hide_collapse" data-sly-list="${topfooter.top}">
+                                    <li><a href="${item.link}" data-sly-test="${item.subTitle}">${item.subTitle}</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <a class="footer_acc_btn" href="javascript:;"><img src="/content/dam/canarahsbclife/in/en/footer/arrow.svg" alt=""></a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="middle_footer" data-sly-use.model="com.chl.core.models.BottomModel" data-sly-test="${model.disclaimer}">
+        <div class="container">
+            <div class="footer_links" data-sly-repeat.item="${model.disclaimer}">
+                <h6 data-sly-test="${item.title}">${item.title}</h6>
+                 
+                <p href="#" data-sly-test="${item.content}">${item.content @context='html'}</p>
+                
+            </div>
+            
+            <div class="footer_disclaimers">
+                <div class="accordion" id="footerDisclaimers">
+                    <div class="accordion-item">
+                        <h2 class="footer-accordion-header" id="footerDisclaimersHeadingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#footerDisclaimersCollapseOne" aria-expanded="true" aria-controls="footerDisclaimersCollapseOne" data-sly-test="${model.disclaimerTitle}">${model.disclaimerTitle}</button>
+                        </h2>
+                        <div id="footerDisclaimersCollapseOne" class="accordion-collapse collapse" aria-labelledby="footerDisclaimersHeadingOne" data-bs-parent="#footerDisclaimers">
+                            <div class="accordion-body p-0">
+                                <p data-sly-test="${model.disclaimerText}">${model.disclaimerText @context='html'}</p>
+                                
+                                <div class="list">
+                                    <ul>
+                                        <li data-sly-test="${model.richText}">${model.richText @context='html'}</li>
+                                        
+                                    </ul>	
+                                </div>
+                                <p data-sly-test="${model.richText1}">${model.richText1 @context='html'}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright" data-sly-use.model="com.chl.core.models.BottomModel" data-sly-test="${model.copyRight}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-12">
+                    <small data-sly-test="${model.copyRight}">${model.copyRight}</small>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-12 d-none d-sm-block text-end" data-sly-test="${model.FootertargetType != 'newWindow'}">
+                
+                    
+                    <a data-sly-test="${model.policyLink}" class="footer_privacy" href="${model.policyLink}" target="${model.getFootertargetType}" data-sly-test="${model.policyText}">${model.policyText}</a>
+                </div>
+                 <div class="col-lg-6 col-sm-6 col-12 d-none d-sm-block text-end" data-sly-test="${model.FootertargetType == 'newWindow'}">
+                
+                    
+                    <a data-sly-test="${model.policyLink}" class="footer_privacy" href="${model.policyLink}" onclick="window.open(this.href, '_blank', 'width=1000,height=800'); return false;" data-sly-test="${model.policyText}">${model.policyText}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Ends -->
